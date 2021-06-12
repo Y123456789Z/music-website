@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音频赏析</title>
+    <script type="text/javascript" type="../js/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css"/>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background-color: #2f3542;
+        }
+        #header_nav_left img{
+            width:50px;
+            height:50px;
+        }
+        #header_nav_left i{
+            margin:5px;
+        }
+        #header_nav_right i{
+            margin:5px;
+        }
+        #content{
+            margin-top:20px;
+            width:1200px;
+            margin:30px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="layui-row">
+        <div class="layui-col-md9">           
+            <ul class="layui-nav" id="header_nav_left">
+                <img class="layui-nav-img" src="../resource/img/index page/music_logo.png" title="音视网">
+                <li class="layui-nav-item"><a href="../index.html"><i class="layui-icon layui-icon-home"></i>首页</a></li>
+                <li class="layui-nav-item"><a href="vedio.html"><i class="layui-icon layui-icon-play"></i>视频教学</a></li>
+                <li class="layui-nav-item layui-this"><a href="#"><i class="layui-icon layui-icon-headset"></i>音频赏析</a></li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">干货资源</a>
+                    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                        <dd><a href="resource/sample.html">采样包</a></dd>
+                        <dd><a href="resource/preset.html">合成器预设</a></dd>
+                        <dd><a href="resource/project.html">工程文件</a></dd>
+                        <dd><a href="resource/plugin.html">音源插件</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="article.html"><i class="layui-icon layui-icon-read"></i>必读文章</a></li>
+                <li class="layui-nav-item"><a href="community.html"><i class="layui-icon layui-icon-group"></i>论坛社区</a></li>
+            </ul>
+        </div>
+        <div class="layui-col-md3">
+            <ul class="layui-nav" id="header_nav_right">
+                <li class="layui-nav-item"><a href="personal.html"><i class="layui-icon layui-icon-user"></i>个人中心<span class="layui-badge-dot"></span></a></li>
+                <li class="layui-nav-item">
+                    <a href="personal.html">
+                        <img src="../resource/img/index page/header_img.jpg" class="layui-nav-img">
+                        <label>我</label>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd>
+                            <a id="_login" href="javascript:;">登录</a>
+                        </dd>
+                        <dd>
+                            <a id="_logon" href="javascript:;">注册</a>
+                        </dd>
+                        <dd>
+                            <a href="../index.html" onclick="out()">退出</a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="content">
+        <div>
+            <form class="layui-form" style="float: left;">
+                <i class="layui-icon layui-icon-speaker" style="font-size: 30px;color: #ff6b81;"></i>
+                <span style="color: #ff7f50;font-size:18px;font-weight: bold;font-family:cursive">公告：</span>
+                <label id="gong_gao" style="color:#7bed9f;font-size: 16px;font-weight: bold;"></label>
+            </form>
+            <form class="layui-form" style="float: right;">
+                <div class="layui-form-item">
+                    <div class="layui-input-inline" style="width:240px">
+                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索内容" autocomplete="off" class="layui-input">
+                    
+                    </div>
+                    <button class="layui-btn layui-btn-radius layui-btn-warm layui-anim layui-anim-scale" style="width:80px;" onclick="search()">搜索</button>
+                </div>
+            </form>
+        </div>
+
+        <div style="clear:both;background-color: #dfe4ea;">
+            <h2 style="font-family:serif;font-weight: bold;color:#57606f">沉浸在音乐里吧</h2>
+            <hr class="layui-bg-green">
+            <div style="width:100%;">
+                <div style="float:left;width:400px;">
+                    <img src="../resource/img/audio page/avicii.PNG" width="300" height="300px" style="border-radius: 25px;margin:0 50px">
+                    <div class="layui-collapse" lay-accordion style="margin:0 10px;">
+                        <div class="layui-colla-item">
+                            <h2 class="layui-colla-title">歌手简介</h2>
+                            <div class="layui-colla-content layui-show">Avicii，男，处女座，本名提姆·伯格林（Tim Bergling），1989年9月8日-2018年4月20日。在2012年和2013年荣获DJMAG世界百大DJ第三名，2013年Dancing Astronaut杂志选为世界顶尖制作人第一名、2013年全美音乐奖最受欢迎电子舞曲艺人。其作品“Sunshine”与“Levels”在德国、意大利、荷兰和英国等11个国家进入排行榜前十名，且为匈牙利、挪威和瑞典的年度冠军歌曲。2018年4月20日下午艾维奇于阿曼首都马斯喀特去世，年仅28岁。</div>
+                        </div>
+                        <div class="layui-colla-item">
+                            <h2 class="layui-colla-title">代表作品</h2>
+                            <div class="layui-colla-content layui-show">《Wake me up》、《Levels》、《Waiting for Love》、《Lonely Together》、《Without You》等</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="float:left;width:400px;">
+                    <img src="../resource/img/audio page/alan walker.PNG" width="300px" height="300px" style="border-radius: 25px;margin:0 50px">
+                    <div class="layui-collapse" lay-accordion style="margin:0 10px;">
+                        <div class="layui-colla-item">
+                            <h2 class="layui-colla-title">歌手简介</h2>
+                            <div class="layui-colla-content layui-show">艾兰·奥拉夫·沃克（Alan Olav Walker），1997年8月24日出生于英国英格兰北安普敦郡，挪威DJ、音乐制作人。
+                                2014年11月，在YouTube上推出个人电音作品《Fade》而出道 。2015年12月，通过索尼音乐发行个人第一首正式单曲《Faded》，该首歌曲的MV在YouTube上的点击量突破了12亿 。2016年6月，发行人声伴唱电音单曲《Sing Me To Sleep》。同年11月6日，获得MTV欧洲音乐奖“最佳挪威艺人”奖。2017年2月22日，《Faded》入围第37届全英音乐奖“年度英国单曲”奖。同年5月，发布首支由男声伴唱的电音作品《Tired》。2018年，发行首张录音室专辑《Different World》。</div>
+                        </div>
+                        <div class="layui-colla-item">
+                            <h2 class="layui-colla-title">代表作品</h2>
+                            <div class="layui-colla-content layui-show">Fade、Faded、Sing Me To Sleep、Alone、Tired、The Spectre</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="float:left;width:400px;">
+                    <img src="../resource/img/audio page/kygo.PNG" width="300px" height="300px" style="border-radius: 25px;margin:0 50px">
+                    <div class="layui-collapse" lay-accordion style="margin:0 10px;">
+                        <div class="layui-colla-item">
+                            <h2 class="layui-colla-title">歌手简介</h2>
+                            <div class="layui-colla-content layui-show">凯戈（Kygo），原名Kyre Gørvell-Dahll，挪威DJ。2015年首次登上DJ Mag 前100 排名33. 
+                                2016年DJ Mag 排名26.
+                                2017年DJ Mag 排名24.
+                                2018年DJ Mag 排名32. 
+                                2019年DJ Mag 排名52. 
+                                2020年DJ Mag 排名28.</div>
+                        </div>
+                        <div class="layui-colla-item">
+                            <h2 class="layui-colla-title">代表作品</h2>
+                            <div class="layui-colla-content layui-show">This Town、Firestone、Cut your breath、It Ain't Me、I'll Wait、Stole The Show、First Time</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="layui-bg-orange">
+            <div style="clear: both;">
+                <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                    <ul class="layui-tab-title" style="font-weight: bold;color:gray;">
+                        <li class="layui-this">progressive house</li>
+                        <li>melodic house/mid tempo</li>
+                        <li>tropical house</li>
+                        <li>future house</li>
+                        <li>deep house</li>
+                        <li>slap house/brazilian bass</li>
+                        <li>future bass</li>
+                        <li>dubstep</li>
+                        <li>electro house</li>
+                        <li>trance</li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show">
+                            <p style="color:rgb(66, 66, 58);font-size: 16px;font-style: oblique;">
+                                progressive house是最近几年来特别火爆的曲风，典型的EDM舞曲结构，使用锯齿波音色使得歌曲高频部分尤为突出，特别躁，代表人物小马丁（martin garrix）、A神（avicii）、V神（vicetone）、tobu等等
+                            </p>
+                            <ul>
+                                <li style="height:100px;width:1100px;margin:30px auto;">
+                                    <img src="../resource/img/audio page/avicii_music1.PNG" width="100px" height="100px" style="border-radius: 25px;float:left">
+                                    <div style="float:left;height:36px;margin:30px 10px;">
+                                        <div style="font-size:20px;font-weight: bold;color: rgb(43, 41, 41);">Avicii</div>
+                                        <div style="font-size:16px;font-weight: bold;color: rgb(83, 80, 80);">without you</div>
+                                    </div>
+                                    <audio class="play" controls style="width:800px;position:absolute;right:120px;margin-top:20px;outline: none;">
+                                        <source src="../resource/audio/without you-avicii.mp3" type="audio/mpeg">
+                                        您的浏览器不支持 audio 元素。
+                                        </audio>
+                                </li>
+                                <li style="height:100px;width:1100px;margin:30px auto;">
+                                    <img src="../resource/img/audio page/avicii_music2.PNG" width="100px" height="100px" style="border-radius: 25px;float:left">
+                                    <div style="float:left;height:36px;margin:30px 10px;">
+                                        <div style="font-size:20px;font-weight: bold;color: rgb(43, 41, 41);">Avicii</div>
+                                        <div style="font-size:16px;font-weight: bold;color: rgb(83, 80, 80);">waiting for love</div>
+                                    </div>
+                                    <audio class="play" controls style="width:800px;position:absolute;right:120px;margin-top:20px;outline: none;">
+                                        <source src="../resource/audio/waiting for love-avicii.mp3" type="audio/mpeg">
+                                        您的浏览器不支持 audio 元素。
+                                        </audio>
+                                </li>
+                                <li style="height:100px;width:1100px;margin:30px auto;">
+                                    <img src="../resource/img/audio page/avicii_music3.PNG" width="100px" height="100px" style="border-radius: 25px;float:left">
+                                    <div style="float:left;height:36px;margin:30px 10px;">
+                                        <div style="font-size:20px;font-weight: bold;color: rgb(43, 41, 41);">Avicii</div>
+                                        <div style="font-size:16px;font-weight: bold;color: rgb(83, 80, 80);">wake me up</div>
+                                    </div>
+                                    <audio class="play" controls style="width:800px;position:absolute;right:120px;margin-top:20px;outline: none;">
+                                        <source src="../resource/audio/wake me up-avicii.mp3" type="audio/mpeg">
+                                        您的浏览器不支持 audio 元素。
+                                        </audio>
+                                </li>
+                                <li style="height:100px;width:1100px;margin:30px auto;">
+                                    <img src="../resource/img/audio page/avicii_music4.PNG" width="100px" height="100px" style="border-radius: 25px;float:left">
+                                    <div style="float:left;height:36px;margin:30px 10px;">
+                                        <div style="font-size:20px;font-weight: bold;color: rgb(43, 41, 41);">Avicii</div>
+                                        <div style="font-size:16px;font-weight: bold;color: rgb(83, 80, 80);">levels</div>
+                                    </div>
+                                    <audio class="play" controls style="width:800px;position:absolute;right:120px;margin-top:20px;outline: none;">
+                                        <source src="../resource/audio/levels-avicii.mp3" type="audio/mpeg">
+                                        您的浏览器不支持 audio 元素。
+                                        </audio>
+                                </li>
+                                <li style="height:100px;width:1100px;margin:30px auto;">
+                                    <img src="../resource/img/audio page/vicetone_music1.PNG" width="100px" height="100px" style="border-radius: 25px;float:left">
+                                    <div style="float:left;height:36px;margin:30px 10px;">
+                                        <div style="font-size:20px;font-weight: bold;color: rgb(43, 41, 41);">Vicetone</div>
+                                        <div style="font-size:16px;font-weight: bold;color: rgb(83, 80, 80);">ensemble</div>
+                                    </div>
+                                    <audio class="play" controls style="width:800px;position:absolute;right:120px;margin-top:20px;outline: none;">
+                                        <source src="../resource/audio/ensemble-vicetone.mp3" type="audio/mpeg">
+                                        您的浏览器不支持 audio 元素。
+                                        </audio>
+                                </li>
+                                <li style="height:100px;width:1100px;margin:30px auto;">
+                                    <img src="../resource/img/audio page/vicetone_music2.PNG" width="100px" height="100px" style="border-radius: 25px;float:left">
+                                    <div style="float:left;height:36px;margin:30px 10px;">
+                                        <div style="font-size:20px;font-weight: bold;color: rgb(43, 41, 41);">Vicetone</div>
+                                        <div style="font-size:16px;font-weight: bold;color: rgb(83, 80, 80);">anywhere I go</div>
+                                    </div>
+                                    <audio class="play" controls style="width:800px;position:absolute;right:120px;margin-top:20px;outline: none;">
+                                        <source src="../resource/audio/anywhere I go-vicetone.mp3" type="audio/mpeg">
+                                        您的浏览器不支持 audio 元素。
+                                        </audio>
+                                </li>
+                                <li style="height:100px;width:1100px;margin:30px auto;">
+                                    <img src="../resource/img/audio page/vicetone_music3.PNG" width="100px" height="100px" style="border-radius: 25px;float:left">
+                                    <div style="float:left;height:36px;margin:30px 10px;">
+                                        <div style="font-size:20px;font-weight: bold;color: rgb(43, 41, 41);">Vicetone</div>
+                                        <div style="font-size:16px;font-weight: bold;color: rgb(83, 80, 80);">collide</div>
+                                    </div>
+                                    <audio class="play" controls style="width:800px;position:absolute;right:120px;margin-top:20px;outline: none;">
+                                        <source src="../resource/audio/collide-vicetone.mp3" type="audio/mpeg">
+                                        您的浏览器不支持 audio 元素。
+                                        </audio>
+                                </li>
+                                <li style="height:100px;width:1100px;margin:30px auto;">
+                                    <img src="../resource/img/audio page/vicetone_music4.PNG" width="100px" height="100px" style="border-radius: 25px;float:left">
+                                    <div style="float:left;height:36px;margin:30px 10px;">
+                                        <div style="font-size:20px;font-weight: bold;color: rgb(43, 41, 41);">Vicetone</div>
+                                        <div style="font-size:16px;font-weight: bold;color: rgb(83, 80, 80);">the new king</div>
+                                    </div>
+                                    <audio class="play" controls style="width:800px;position:absolute;right:120px;margin-top:20px;outline: none;">
+                                        <source src="../resource/audio/the new king-vicetone.mp3" type="audio/mpeg">
+                                        您的浏览器不支持 audio 元素。
+                                        </audio>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="layui-tab-item">
+                            <p style="color:rgb(66, 66, 58);font-size: 16px;font-style: oblique;">
+                                melodic house又叫mid tempo，是一种速度偏中等的曲风，相较于传统EDM节奏更平和，使用的音色比较软，特别看重旋律的创作，十分洗脑，代表人物alan walker、k391、ILLENIUM等等
+                            </p>
+                            <ul>
+                                <li style="height:100px;width:1100px;margin:30px auto;">
+                                    <img src="../resource/img/audio page/aw_music1.PNG" width="100px" height="100px" style="border-radius: 25px;float:left">
+                                    <div style="float:left;height:36px;margin:30px 10px;">
+                                        <div style="font-size:20px;font-weight: bold;color: rgb(43, 41, 41);">alan walker</div>
+                                        <div style="font-size:16px;font-weight: bold;color: rgb(83, 80, 80);">faded</div>
+                                    </div>
+                                    <audio class="play" controls style="width:800px;position:absolute;right:120px;margin-top:20px;outline: none;">
+                                        <source src="../resource/audio/faded-aw.mp3" type="audio/mpeg">
+                                        您的浏览器不支持 audio 元素。
+                                        </audio>
+                                </li>
+                                <li style="height:100px;width:1100px;margin:30px auto;">
+                                    <img src="../resource/img/audio page/aw_music2.PNG" width="100px" height="100px" style="border-radius: 25px;float:left">
+                                    <div style="float:left;height:36px;margin:30px 10px;">
+                                        <div style="font-size:20px;font-weight: bold;color: rgb(43, 41, 41);">alan walker</div>
+                                        <div style="font-size:16px;font-weight: bold;color: rgb(83, 80, 80);">lost control</div>
+                                    </div>
+                                    <audio class="play" controls style="width:800px;position:absolute;right:120px;margin-top:20px;outline: none;">
+                                        <source src="../resource/audio/lost control-aw.mp3" type="audio/mpeg">
+                                        您的浏览器不支持 audio 元素。
+                                        </audio>
+                                </li> 
+                                <li style="height:100px;width:1100px;margin:30px auto;">
+                                    <img src="../resource/img/audio page/aw_music3.PNG" width="100px" height="100px" style="border-radius: 25px;float:left">
+                                    <div style="float:left;height:36px;margin:30px 10px;">
+                                        <div style="font-size:20px;font-weight: bold;color: rgb(43, 41, 41);">alan walker</div>
+                                        <div style="font-size:16px;font-weight: bold;color: rgb(83, 80, 80);">the spectre</div>
+                                    </div>
+                                    <audio class="play" controls style="width:800px;position:absolute;right:120px;margin-top:20px;outline: none;">
+                                        <source src="../resource/audio/the spectre.mp3" type="audio/mpeg">
+                                        您的浏览器不支持 audio 元素。
+                                        </audio>
+                                </li>                                
+                            </ul>
+                        </div>
+                        <div class="layui-tab-item">
+                            <p style="color:rgb(66, 66, 58);font-size: 16px;font-style: oblique;">
+                                tropical house是一种节奏欢快的热带浩室音乐，音色十分柔软并且抓耳，典型的音色有排箫、口哨、铃铛等，歌曲速度一般在100到125之间，慵懒且动感十足，代表人物kygo，martin jensen，Tez Candey等等
+                            </p>
+                            <ul>
+                                <li style="height:100px;width:1100px;margin:30px auto;">
+                                    <img src="../resource/img/audio page/tez_music1.PNG" width="100px" height="100px" style="border-radius: 25px;float:left">
+                                    <div style="float:left;height:36px;margin:30px 10px;">
+                                        <div style="font-size:20px;font-weight: bold;color: rgb(43, 41, 41);">Tez Candey</div>
+                                        <div style="font-size:16px;font-weight: bold;color: rgb(83, 80, 80);">Seve</div>
+                                    </div>
+                                    <audio class="play" controls style="width:800px;position:absolute;right:120px;margin-top:20px;outline: none;">
+                                        <source src="../resource/audio/seve-tez.mp3" type="audio/mpeg">
+                                        您的浏览器不支持 audio 元素。
+                                        </audio>
+                                </li>
+                                <li style="height:100px;width:1100px;margin:30px auto;">
+                                    <img src="../resource/img/audio page/kygo_music2.PNG" width="100px" height="100px" style="border-radius: 25px;float:left">
+                                    <div style="float:left;height:36px;margin:30px 10px;">
+                                        <div style="font-size:20px;font-weight: bold;color: rgb(43, 41, 41);">kygo</div>
+                                        <div style="font-size:16px;font-weight: bold;color: rgb(83, 80, 80);">never let you go</div>
+                                    </div>
+                                    <audio class="play" controls style="width:800px;position:absolute;right:120px;margin-top:20px;outline: none;">
+                                        <source src="../resource/audio/never let you go-kygo.mp3" type="audio/mpeg">
+                                        您的浏览器不支持 audio 元素。
+                                        </audio>
+                                </li>
+                                <li style="height:100px;width:1100px;margin:30px auto;">
+                                    <img src="../resource/img/audio page/kygo_music1.PNG" width="100px" height="100px" style="border-radius: 25px;float:left">
+                                    <div style="float:left;height:36px;margin:30px 10px;">
+                                        <div style="font-size:20px;font-weight: bold;color: rgb(43, 41, 41);">kygo</div>
+                                        <div style="font-size:16px;font-weight: bold;color: rgb(83, 80, 80);">I'll wait</div>
+                                    </div>
+                                    <audio class="play" controls style="width:800px;position:absolute;right:120px;margin-top:20px;outline: none;">
+                                        <source src="../resource/audio/I'll wait-kygo.mp3" type="audio/mpeg">
+                                        您的浏览器不支持 audio 元素。
+                                        </audio>
+                                </li> 
+                                <li style="height:100px;width:1100px;margin:30px auto;">
+                                    <img src="../resource/img/audio page/kygo_music3.PNG" width="100px" height="100px" style="border-radius: 25px;float:left">
+                                    <div style="float:left;height:36px;margin:30px 10px;">
+                                        <div style="font-size:20px;font-weight: bold;color: rgb(43, 41, 41);">kygo</div>
+                                        <div style="font-size:16px;font-weight: bold;color: rgb(83, 80, 80);">firestone</div>
+                                    </div>
+                                    <audio class="play" controls style="width:800px;position:absolute;right:120px;margin-top:20px;outline: none;">
+                                        <source src="../resource/audio/firestone-kygo.mp3" type="audio/mpeg">
+                                        您的浏览器不支持 audio 元素。
+                                        </audio>
+                                </li>                                
+                            </ul>
+                        </div>
+                        <div class="layui-tab-item">
+                            <p style="color:rgb(66, 66, 58);font-size: 16px;font-style: oblique;">
+                                future house是一种带有未来科技感的电子音乐，典型的音色是敲铁桶，但是也有很多分支，比如现在大火的future bounce，这种音乐更加将就弹跳性，使用自动化控制混响、音量等，代表人物大菠萝（don biablo）、mike williams、brooks、mesto、脏爪dirty palm等等
+                            </p>
+                            <ul>
+                                <li style="height:100px;width:1100px;margin:30px auto;">
+                                    <img src="../resource/img/audio page/brooks_music1.PNG" width="100px" height="100px" style="border-radius: 25px;float:left">
+                                    <div style="float:left;height:36px;margin:30px 10px;">
+                                        <div style="font-size:20px;font-weight: bold;color: rgb(43, 41, 41);">brooks/martin garrix</div>
+                                        <div style="font-size:16px;font-weight: bold;color: rgb(83, 80, 80);">byte</div>
+                                    </div>
+                                    <audio class="play" controls style="width:800px;position:absolute;right:120px;margin-top:20px;outline: none;">
+                                        <source src="../resource/audio/byte-brooks.mp3" type="audio/mpeg">
+                                        您的浏览器不支持 audio 元素。
+                                        </audio>
+                                </li>
+                                <li style="height:100px;width:1100px;margin:30px auto;">
+                                    <img src="../resource/img/audio page/brooks_music2.PNG" width="100px" height="100px" style="border-radius: 25px;float:left">
+                                    <div style="float:left;height:36px;margin:30px 10px;">
+                                        <div style="font-size:20px;font-weight: bold;color: rgb(43, 41, 41);">books/martin garrix/david guetta</div>
+                                        <div style="font-size:16px;font-weight: bold;color: rgb(83, 80, 80);">like I do</div>
+                                    </div>
+                                    <audio class="play" controls style="width:800px;position:absolute;right:120px;margin-top:20px;outline: none;">
+                                        <source src="../resource/audio/like I do-brooks.mp3" type="audio/mpeg">
+                                        您的浏览器不支持 audio 元素。
+                                        </audio>
+                                </li>
+                                <li style="height:100px;width:1100px;margin:30px auto;">
+                                    <img src="../resource/img/audio page/mike williams_music1.PNG" width="100px" height="100px" style="border-radius: 25px;float:left">
+                                    <div style="float:left;height:36px;margin:30px 10px;">
+                                        <div style="font-size:20px;font-weight: bold;color: rgb(43, 41, 41);">mike williams</div>
+                                        <div style="font-size:16px;font-weight: bold;color: rgb(83, 80, 80);">wait another day</div>
+                                    </div>
+                                    <audio class="play" controls style="width:800px;position:absolute;right:120px;margin-top:20px;outline: none;">
+                                        <source src="../resource/audio/wait another day-mike williams.mp3" type="audio/mpeg">
+                                        您的浏览器不支持 audio 元素。
+                                        </audio>
+                                </li> 
+                                <li style="height:100px;width:1100px;margin:30px auto;">
+                                    <img src="../resource/img/audio page/mesto_music1.PNG" width="100px" height="100px" style="border-radius: 25px;float:left">
+                                    <div style="float:left;height:36px;margin:30px 10px;">
+                                        <div style="font-size:20px;font-weight: bold;color: rgb(43, 41, 41);">mesto</div>
+                                        <div style="font-size:16px;font-weight: bold;color: rgb(83, 80, 80);">chances</div>
+                                    </div>
+                                    <audio class="play" controls style="width:800px;position:absolute;right:120px;margin-top:20px;outline: none;">
+                                        <source src="../resource/audio/chances-mesto.mp3" type="audio/mpeg">
+                                        您的浏览器不支持 audio 元素。
+                                        </audio>
+                                </li>                                
+                            </ul>
+                        </div>
+                        <div class="layui-tab-item">暂未更新内容</div>
+                        <div class="layui-tab-item">暂未更新内容</div>
+                        <div class="layui-tab-item">暂未更新内容</div>
+                        <div class="layui-tab-item">暂未更新内容</div>
+                        <div class="layui-tab-item">暂未更新内容</div>
+                        <div class="layui-tab-item">暂未更新内容</div>
+                    </div>
+                </div>  
+            </div>
+    </div>
+
+
+
+    <div class="layui-row" style="width:100%;height:200px;background-color: rgb(7, 7, 56);clear: both;">
+        <div class="layui-col-md4" style="height:100%">
+            <div style="width:300px;height:180px;margin:10px auto 10px 20px;">
+                <img src="../resource/img/index page/music_logo.png" width="100px" height="100px" style="border-radius: 25px;">
+                <span><img src="../resource/img/index page/foot_logo.png"/></span>
+                <div style="color: rgb(116, 114, 108);margin-top:20px;">COPYRIGHT ©2021</div>
+            </div>
+        </div>
+        <div class="layui-col-md6" style="height:100%">
+            <div style="margin-top: 30px;width:100%;height:150px">
+                <div style="width:200px;float:left;height:50px;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">友情链接</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-wechat" style="font-size: 30px;margin:5px;color:rgb(34, 190, 86)"></i>微信</a></li>
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-qq" style="font-size: 30px;margin:5px;color:rgb(44, 226, 226)"></i>QQ</a></li>
+                        </li>
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-weibo" style="font-size: 30px;margin:5px;color:rgb(223, 27, 174)"></i>微博</a></li>
+                        </li>
+                    </ul>
+                </div>
+                <div style="width:200px;float:left;text-align: left;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">关于我们</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li><a href="#">我们的历史</a></li>
+                        <li><a href="#">我们的目的</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div style="width:200px;float:left;text-align: left;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">产品</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li><a href="#">音乐</a></li>
+                        <li><a href="#">软件/插件</a></li>
+                        <li><a href="#">舞台表演</a></li>
+                        <li><a href="#">职业服务</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md2" style="height:100%;">
+            <div style="width:200px;height:150px;margin:25px auto;text-align: center;">
+                <img src="../resource/img/index page/twofrontcode2.jpg" width="100px" height="100px">
+                <div style="color: rgb(116, 114, 108);margin-top:20px;">扫码加入微信群聊</div>
+            </div>                          
+        </div>
+    </div>
+
+
+    <form action="" method="get" class="layui-form">
+        <div id="login" style="display: none;">
+            <h2 style="color:rgb(155, 153, 143);margin:40px auto;text-align: center;font-weight: bold;font-style: oblique;">用户登录</h2>
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <i class="layui-icon layui-icon-username"></i>
+                </label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="username" name="user_name" placeholder="请输入用户名或邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <i class="layui-icon layui-icon-password"></i>
+                </label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item"  style="margin-top:40px">
+                <div class="layui-input-block">
+                  <button class="layui-btn layui-btn-radius layui-btn-normal" lay-submit lay-filter="dl">登录</button>
+                  <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">重置</button>
+                </div>
+              </div>
+              <div>
+                    <a href="#" id="change_to_logon" style="margin-left:30px">无账号？去注册</a>
+                    <a href="#" style="margin-right:30px;float:right">找回密码</a>
+              </div>
+            
+        </div>
+    </form>
+
+    <form action="" method="get" class="layui-form">
+        <div id="logon" style="display: none;">
+            <h2 style="color:rgb(155, 153, 143);margin:40px auto;text-align: center;font-weight: bold;font-style: oblique;">用户注册</h2>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-username"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="username" name="user_name" placeholder="设置用户名或邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" name="password" placeholder="设置输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-release"></i></label>
+                <div class="layui-input-block">
+                    <input type="text" lay-verify="email" required="required" name="email" placeholder="设置邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+                </div>
+              
+              <div class="layui-form-item"  style="margin-top:40px">
+                <div class="layui-input-block">
+                  <button class="layui-btn layui-btn-radius layui-btn-warm" lay-submit lay-filter="zc">注册</button>
+                  <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">重置</button>
+                </div>
+              </div>
+              <div>
+                    <a href="#" id="change_to_login" style="margin-left:30px">已有账号？去登录</a>
+                    <a href="#" style="margin-right:30px;float:right">找回密码</a>
+              </div>
+            
+        </div>
+    </form>
+
+
+
+    <script type="text/javascript" src="../layui/layui.all.js"></script>
+    <script type="text/javascript" src="../echarts.min.js"></script>
+    <script type="text/javascript" src="../vue.min.js"></script>
+    <script type="text/javascript" src="../js/form.js"></script>
+    <script type="text/javascript" src="../js/search.js"></script>
+
+    <!-- <script>
+        function login_btn(){
+            window.location.href="./page/login.html"
+        }
+        function logon_btn(){
+            window.location.href="./page/logon.html"
+        }
+    </script> -->
+</body>
+</html>

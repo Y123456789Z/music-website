@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css"/>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background-color:#2f3542;
+        }
+        #header_nav_left img{
+            width:50px;
+            height:50px;
+        }
+        #header_nav_left i{
+            margin:5px;
+        }
+        #header_nav_right i{
+            margin:5px;
+        }
+        #content{
+            margin-top:20px;
+            margin-left:40px;
+            margin-right:40px;
+        }
+        .content_left{
+            width:800px;
+            float:left;
+        }
+        .content_right{
+            width:400px;
+            float:right;
+        }
+    </style>
+</head>
+<body>
+    <div class="layui-row">
+        <div class="layui-col-md9">           
+            <ul class="layui-nav" id="header_nav_left">
+                <img class="layui-nav-img" src="resource/img/index page/music_logo.png" title="音视网">
+                <li class="layui-nav-item layui-this"><a href="#"><i class="layui-icon layui-icon-home"></i>首页</a></li>
+                <li class="layui-nav-item"><a href="page/vedio.html"><i class="layui-icon layui-icon-play"></i>视频教学</a></li>
+                <li class="layui-nav-item"><a href="page/audio.html"><i class="layui-icon layui-icon-headset"></i>音频赏析</a></li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">干货资源</a>
+                    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                        <dd><a href="page/resource/sample.html">采样包</a></dd>
+                        <dd><a href="page/resource/preset.html">合成器预设</a></dd>
+                        <dd><a href="page/resource/project.html">工程文件</a></dd>
+                        <dd><a href="page/resource/plugin.html">音源插件</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="page/article.html"><i class="layui-icon layui-icon-read"></i>必读文章</a></li>
+                <li class="layui-nav-item"><a href="page/community.html"><i class="layui-icon layui-icon-group"></i>论坛社区</a></li>
+            </ul>
+        </div>
+        <div class="layui-col-md3">
+            <ul class="layui-nav" id="header_nav_right">
+                <li class="layui-nav-item"><a href="page/personal.html"><i class="layui-icon layui-icon-user"></i>个人中心<span class="layui-badge-dot"></span></a></li>
+                <li class="layui-nav-item">
+                    <a href="page/personal.html">
+                        <img src="resource/img/index page/header_img.jpg" class="layui-nav-img">
+                        <label>我</label>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd>
+                            <a id="_login" href="javascript:;">登录</a>
+                        </dd>
+                        <dd>
+                            <a id="_logon" href="javascript:;">注册</a>
+                        </dd>
+                        <dd>
+                            <a href="index.html" onclick="out()">退出</a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="content">
+        <div>
+            <form class="layui-form" style="float: left;">
+                <i class="layui-icon layui-icon-speaker" style="font-size: 30px;color: #ff6b81;"></i>
+                <span style="color: #ff7f50;font-size:18px;font-weight: bold;font-family:cursive">公告：</span>
+                <label id="gong_gao" style="color:#7bed9f;font-size: 16px;font-weight: bold;"></label>
+            </form>
+            <form class="layui-form" style="float: right;">
+                <div class="layui-form-item">
+                    <div class="layui-input-inline" style="width:240px">
+                        <input id="searchId" type="text" name="title" required  lay-verify="required" placeholder="请输入搜索内容" autocomplete="off" class="layui-input">
+                    
+                    </div>
+                    <button class="layui-btn layui-btn-radius layui-btn-warm layui-anim layui-anim-scale" style="width:80px;" onclick="search()" lay-submit lay-filter="search">搜索</button>
+                </div>
+            </form>
+        </div>
+
+
+        <div style="clear: both;"></div>
+        <div class="layui-carousel" id="test1">
+            <div carousel-item>
+                <div><img src="resource/img/index page/index1.jpg"></div>
+                <div><img src="resource/img/index page/index2.jpg"></div>
+                <div><img src="resource/img/index page/index3.jpg"></div>
+                <div><img src="resource/img/index page/index6.jpg"></div>
+                <div><img src="resource/img/index page/index5.jpg"></div>
+            </div>
+        </div>
+
+
+        <div class="content_left">
+            <div style="font-size: 20px;margin:10px 0;">
+                <i class="layui-icon layui-icon-rate-solid" style="font-size: 30px; color: #eccc68"></i>
+                <span style="font-family:serif;font-weight: bold;color:#70a1ff">最新发布</span>
+            </div>
+
+                        <div style="width:740px;height:580px;margin:0 auto;border-radius: 25px;overflow: scroll;background-color: #ced6e0;">
+                            <div style="width:340px;height:400px;float:left;margin:10px;background-color: #ffffff;border-radius: 20px;">
+                                <a href="page/details/">
+                                    <img style="width:100%;height:320px;border-radius: 20px;" src="resource/img/index page/trap_vol1.jpg"/>
+                                    <span>[1000个高质量Serum预置！]Aubit Serum Complete Bundle</span>
+                                </a>
+                            </div>
+                            <div style="width:340px;height:400px;float:left;margin:10px;background-color: #ffffff;border-radius: 20px;">
+                                <a href="page/details/">
+                                    <img style="width:100%;height:320px;border-radius: 20px;" src="resource/img/index page/future_bass_vol1.jpg"/>
+                                <span>[Kawaii Bass完整干声+采样包]Soundsmiths Tokyo Nights: Kawaii Future Bass</span>
+                                </a>
+                            </div>
+                            <div style="width:340px;height:400px;float:left;margin:10px;background-color: #ffffff;border-radius: 20px;">
+                                <a href="page/details/">
+                                    <img style="width:100%;height:320px;border-radius: 20px;" src="resource/img/index page/french_house_preset1.jpg"/>
+                                <span>[Nu Disco/French House采样包]Production Master Neon Heat – Nu Disco & French House</span>
+                                </a>
+                            </div>
+                            <div style="width:340px;height:400px;float:left;margin:10px;background-color: #ffffff;border-radius: 20px;">
+                                <a href="page/details/preset6.html">
+                                <img style="width:100%;height:320px;border-radius: 20px;" src="resource/img/index page/serum_preset1.jpg"/>
+                                <span>[猫厂制作人出品的Chillout/Downtempo采样包+Serum预置]Black Octopus Sound Stratosphere</span>
+                                </a>
+                                
+                            </div>
+                        </div> 
+                    <div class="layui-tab-item">
+                        <div style="width:740px;height:580px;margin:0 auto;background-color: rgb(247, 247, 183);border-radius: 25px;overflow: scroll;">
+                            <div style="width:340px;height:350px;float:left;margin:10px">
+                                <img style="width:100%;height:320px" src="resource/img/index page/trap_vol1.jpg"/>
+                                <span>[1000个高质量Serum预置！]Aubit Serum Complete Bundle</span>
+                                
+                            </div>
+                            <div style="width:340px;height:350px;float:left;margin:10px">
+                                <img style="width:100%;height:320px" src="resource/img/index page/future_bass_vol1.jpg"/>
+                                <span>[Kawaii Bass完整干声+采样包]Soundsmiths Tokyo Nights: Kawaii Future Bass</span>
+                            </div>
+                            <div style="width:340px;height:350px;float:left;margin:10px;">
+                                <img style="width:100%;height:320px" src="resource/img/index page/french_house_preset1.jpg"/>
+                                <span>[Nu Disco/French House采样包]Production Master Neon Heat – Nu Disco & French House</span>
+                                
+                            </div>
+                            <div style="width:340px;height:350px;float:left;margin:10px">
+                                <img style="width:100%;height:320px" src="resource/img/index page/serum_preset1.jpg"/>
+                                <span>[猫厂制作人出品的Chillout/Downtempo采样包+Serum预置]Black Octopus Sound Stratosphere</span>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="layui-tab-item">
+                        <div style="width:740px;height:580px;margin:0 auto;background-color: rgb(247, 247, 183);border-radius: 25px;overflow: scroll;">
+                            <div style="width:340px;height:350px;float:left;margin:10px">
+                                <img style="width:100%;height:320px" src="resource/img/index page/trap_vol1.jpg"/>
+                                <span>[1000个高质量Serum预置！]Aubit Serum Complete Bundle</span>
+                                
+                            </div>
+                            <div style="width:340px;height:350px;float:left;margin:10px">
+                                <img style="width:100%;height:320px" src="resource/img/index page/future_bass_vol1.jpg"/>
+                                <span>[Kawaii Bass完整干声+采样包]Soundsmiths Tokyo Nights: Kawaii Future Bass</span>
+                            </div>
+                            <div style="width:340px;height:350px;float:left;margin:10px;">
+                                <img style="width:100%;height:320px" src="resource/img/index page/french_house_preset1.jpg"/>
+                                <span>[Nu Disco/French House采样包]Production Master Neon Heat – Nu Disco & French House</span>
+                                
+                            </div>
+                            <div style="width:340px;height:350px;float:left;margin:10px">
+                                <img style="width:100%;height:320px" src="resource/img/index page/serum_preset1.jpg"/>
+                                <span>[猫厂制作人出品的Chillout/Downtempo采样包+Serum预置]Black Octopus Sound Stratosphere</span>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="layui-tab-item">
+                        <div style="width:740px;height:580px;margin:0 auto;background-color: rgb(247, 247, 183);border-radius: 25px;overflow: scroll;">
+                            <div style="width:340px;height:350px;float:left;margin:10px">
+                                <img style="width:100%;height:320px" src="resource/img/index page/trap_vol1.jpg"/>
+                                <span>[1000个高质量Serum预置！]Aubit Serum Complete Bundle</span>
+                                
+                            </div>
+                            <div style="width:340px;height:350px;float:left;margin:10px">
+                                <img style="width:100%;height:320px" src="resource/img/index page/future_bass_vol1.jpg"/>
+                                <span>[Kawaii Bass完整干声+采样包]Soundsmiths Tokyo Nights: Kawaii Future Bass</span>
+                            </div>
+                            <div style="width:340px;height:350px;float:left;margin:10px;">
+                                <img style="width:100%;height:320px" src="resource/img/index page/french_house_preset1.jpg"/>
+                                <span>[Nu Disco/French House采样包]Production Master Neon Heat – Nu Disco & French House</span>
+                                
+                            </div>
+                            <div style="width:340px;height:350px;float:left;margin:10px">
+                                <img style="width:100%;height:320px" src="resource/img/index page/serum_preset1.jpg"/>
+                                <span>[猫厂制作人出品的Chillout/Downtempo采样包+Serum预置]Black Octopus Sound Stratosphere</span>
+                            </div>
+                        </div> 
+                    </div>
+
+
+            <div style="font-size: 20px;margin:10px 0;">
+                <i class="layui-icon layui-icon-rate-solid" style="font-size: 30px; color: #1E9FFF;"></i>
+                <span style="font-family:serif;font-weight: bold;color:#70a1ff">猜你喜欢</span>
+            </div>
+            <div style="height: 600px;background-color: azure;padding: 20px;overflow: scroll;">
+                <div style="width:100%;height:80px;position:relative;border-radius: 25px;overflow: hidden;margin-bottom:20px">
+                    <div style="width:100px;height:100%;float:left;">
+                        <img src="resource/img/index page/serum_preset2.jpg" width="80px" height="80px" style="border-radius: 25px;">
+                    </div>
+                    <div style="width:610px;height:100%;float:right;margin-right:25px;">
+                        <div style="width:100%;height:55px;">
+                            <span class="layui-badge" style="margin:5px">1</span>
+                            <span style="color: rgb(77, 74, 74)">[用于Serum的Hybrid Trap预置]Sonic Armory Weapons of Choice Vol.2: Hybrid Bass Weapons For Serum</span>                          
+                        </div>
+                        <div style="width:100%;height:25px;color: rgb(114, 110, 110);">
+                            <span>兰花轻语</span><span class="layui-badge-dot layui-bg-blue" style="margin:auto 5px;"></span><span>2021.3.20</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="width:100%;height:80px;position:relative;border-radius: 25px;overflow: hidden;margin-bottom:20px">
+                    <div style="width:100px;height:100%;float:left;">
+                        <img src="resource/img/index page/kshmr_preset1.jpg" width="80px" height="80px" style="border-radius: 25px;">
+                    </div>
+                    <div style="width:610px;height:100%;float:right;margin-right:25px;">
+                        <div style="width:100%;height:55px;">
+                            <span class="layui-badge" style="margin:5px">2</span>
+                            <span style="color: rgb(77, 74, 74)">[虽迟但到的巨型采样包]Sounds of KSHMR Vol. 3</span>                          
+                        </div>
+                        <div style="width:100%;height:25px;color: rgb(114, 110, 110);">
+                            <span>兰花轻语</span><span class="layui-badge-dot layui-bg-blue" style="margin:auto 5px;"></span><span>2021.3.18</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="width:100%;height:80px;position:relative;border-radius: 25px;overflow: hidden;margin-bottom:20px">
+                    <div style="width:100px;height:100%;float:left;">
+                        <img src="resource/img/index page/future_bass_vol2.png" width="80px" height="80px" style="border-radius: 25px;">
+                    </div>
+                    <div style="width:610px;height:100%;float:right;margin-right:25px;">
+                        <div style="width:100%;height:55px;">
+                            <span class="layui-badge" style="margin:5px">3</span>
+                            <span style="color: rgb(77, 74, 74)">[Future Bass鼓包]Surge Sounds Future Bass Drums</span>                          
+                        </div>
+                        <div style="width:100%;height:25px;color: rgb(114, 110, 110);">
+                            <span>兰花轻语</span><span class="layui-badge-dot layui-bg-blue" style="margin:auto 5px;"></span><span>2021.3.16</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="width:100%;height:80px;position:relative;border-radius: 25px;overflow: hidden;margin-bottom:20px">
+                    <div style="width:100px;height:100%;float:left;">
+                        <img src="resource/img/index page/sylenth1_preset1.png" width="80px" height="80px" style="border-radius: 25px;">
+                    </div>
+                    <div style="width:610px;height:100%;float:right;margin-right:25px;">
+                        <div style="width:100%;height:55px;">
+                            <span class="layui-badge" style="margin:5px">4</span>
+                            <span style="color: rgb(77, 74, 74)">[R3hab风格Sylenth1预置]Bantana Audio REHAB Style Presets</span>                          
+                        </div>
+                        <div style="width:100%;height:25px;color: rgb(114, 110, 110);">
+                            <span>兰花轻语</span><span class="layui-badge-dot layui-bg-blue" style="margin:auto 5px;"></span><span>2021.3.15</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="width:100%;height:80px;position:relative;border-radius: 25px;overflow: hidden;margin-bottom:20px">
+                    <div style="width:100px;height:100%;float:left;">
+                        <img src="resource/img/index page/trap_vol2.jpg" width="80px" height="80px" style="border-radius: 25px;">
+                    </div>
+                    <div style="width:610px;height:100%;float:right;margin-right:25px;">
+                        <div style="width:100%;height:55px;">
+                            <span class="layui-badge" style="margin:5px">5</span>
+                            <span style="color: rgb(77, 74, 74)">[Ableton Live工程+Trapstep采样包]TriSamples – 808 Trapstep Pack Vol.2</span>                          
+                        </div>
+                        <div style="width:100%;height:25px;color: rgb(114, 110, 110);">
+                            <span>兰花轻语</span><span class="layui-badge-dot layui-bg-blue" style="margin:auto 5px;"></span><span>2021.3.12</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="width:100%;height:80px;position:relative;border-radius: 25px;overflow: hidden;margin-bottom:20px">
+                    <div style="width:100px;height:100%;float:left;">
+                        <img src="resource/img/index page/serum_preset3.jpg" width="80px" height="80px" style="border-radius: 25px;">
+                    </div>
+                    <div style="width:610px;height:100%;float:right;margin-right:25px;">
+                        <div style="width:100%;height:55px;">
+                            <span class="layui-badge" style="margin:5px">6</span>
+                            <span style="color: rgb(77, 74, 74)">[San Holo风格Serum/Cthulhu预置+5GB采样包]Surge Sounds Holo</span>                          
+                        </div>
+                        <div style="width:100%;height:25px;color: rgb(114, 110, 110);">
+                            <span>兰花轻语</span><span class="layui-badge-dot layui-bg-blue" style="margin:auto 5px;"></span><span>2021.3.10</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="width:100%;height:80px;position:relative;border-radius: 25px;overflow: hidden;margin-bottom:20px">
+                    <div style="width:100px;height:100%;float:left;">
+                        <img src="resource/img/index page/vocal1.png" width="80px" height="80px" style="border-radius: 25px;">
+                    </div>
+                    <div style="width:610px;height:100%;float:right;margin-right:25px;">
+                        <div style="width:100%;height:55px;">
+                            <span class="layui-badge" style="margin:5px">7</span>
+                            <span style="color: rgb(77, 74, 74)">[17套完整干声]Audentity Records Vocals Only</span>                          
+                        </div>
+                        <div style="width:100%;height:25px;color: rgb(114, 110, 110);">
+                            <span>兰花轻语</span><span class="layui-badge-dot layui-bg-blue" style="margin:auto 5px;"></span><span>2021.3.3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="content_right">
+            <div style="font-size: 20px;margin:10px 0;">
+                <span class="layui-badge-dot layui-bg-orange"></span>
+                <span style="font-family:serif;font-weight: bold;color:#1e90ff">用户信息</span>
+            </div>
+            <div style="width:400px;height:400px;background-color: honeydew;border-radius: 20px;">
+                <div style="width:100%;height:240px;margin-top: 20px;">
+                    <img src="resource/img/index page/login_bg.jpg" style="border-radius: 20px;" width="100%" height="100%"/>
+                </div>
+                <div id="user_status" style="color: rgb(95, 95, 95);text-align: center;margin:20px auto">
+                    HI! 请登录
+                </div>
+                <div style="width:100%;height:100%;text-align: center;">
+                    <button id="btn1" type="button" class="layui-btn layui-btn-radius layui-btn-normal"><i class="layui-icon layui-icon-triangle-r"></i>登录</button>
+                    <button id="btn2" type="button" class="layui-btn layui-btn-radius layui-btn-warm"><i class="layui-icon layui-icon-add-1"></i>注册</button>
+                </div>
+            </div>
+
+
+            <div style="font-size: 20px;margin:10px 0;">
+                <i class="layui-icon layui-icon-rate-solid" style="font-size: 30px; color: #1E9FFF;"></i>
+                <span style="font-family:serif;font-weight: bold;color:#1e90ff">最近评论</span>
+            </div>
+            <div style="height: 600px;background-color: azure;border-radius: 25px;overflow:hidden">
+                <div style="width:340px;height:60px;margin:30px;">
+                    <div style="float:left">
+                        <img src="resource/img/index page/header_img.jpg" width="50px" height="50px" style="border-radius: 50%;margin:5px;">
+                    </div>
+                        <div style="width:200px;height:50px;float:left;margin:5px;font-style: italic;">
+                            <div style="height:20px;width:100%"><span style="color: rgb(66, 161, 199);">雪雪叹气</span><span class="layui-badge-dot layui-bg-blue" style="margin:auto 5px;"></span>2021.3.18</div>
+                            <div style="height:30px;width:100%;color: rgb(97, 94, 94);">来点future bounce风格的教程</div>
+                        </div>    
+                        <div style="float:right;height:20px;width:30px;margin:5px;line-height: 50px;">
+                            <i class="layui-icon layui-icon-praise" style="font-size:20px"></i>2
+                        </div>
+                </div>
+                <div style="width:340px;height:60px;margin:30px;">
+                    <div style="float:left">
+                        <img src="resource/img/index page/header_img.jpg" width="50px" height="50px" style="border-radius: 50%;margin:5px;">
+                    </div>
+                        <div style="width:200px;height:50px;float:left;margin:5px;font-style: italic;">
+                            <div style="height:20px;width:100%"><span style="color: rgb(66, 161, 199);">我爱A神</span><span class="layui-badge-dot layui-bg-blue" style="margin:auto 5px;"></span>2021.3.1</div>
+                            <div style="height:30px;width:100%;color: rgb(97, 94, 94);">站长我想要alan walker的采样包</div>
+                        </div>    
+                        <div style="float:right;height:20px;width:30px;margin:5px;line-height: 50px;">
+                            <i class="layui-icon layui-icon-praise" style="font-size:20px"></i>11
+                        </div>
+                </div>
+                <div style="width:340px;height:60px;margin:30px;">
+                    <div style="float:left">
+                        <img src="resource/img/index page/header_img.jpg" width="50px" height="50px" style="border-radius: 50%;margin:5px;">
+                    </div>
+                        <div style="width:200px;height:50px;float:left;margin:5px;font-style: italic;">
+                            <div style="height:20px;width:100%"><span style="color: rgb(66, 161, 199);">大爱kshmr</span><span class="layui-badge-dot layui-bg-blue" style="margin:auto 5px;"></span>2021.2.28</div>
+                            <div style="height:30px;width:100%;color: rgb(97, 94, 94);">请问有kshmr的bigroom采样包吗？</div>
+                        </div>    
+                        <div style="float:right;height:20px;width:30px;margin:5px;line-height: 50px;">
+                            <i class="layui-icon layui-icon-praise" style="font-size:20px"></i>9
+                        </div>
+                </div>
+                <div style="width:340px;height:60px;margin:30px;">
+                    <div style="float:left">
+                        <img src="resource/img/index page/header_img.jpg" width="50px" height="50px" style="border-radius: 50%;margin:5px;">
+                    </div>
+                        <div style="width:200px;height:50px;float:left;margin:5px;font-style: italic;">
+                            <div style="height:20px;width:100%"><span style="color: rgb(66, 161, 199);">v神小迷妹</span><span class="layui-badge-dot layui-bg-blue" style="margin:auto 5px;"></span>2021.2.21</div>
+                            <div style="height:30px;width:100%;color: rgb(97, 94, 94);">求个electro house风格的采样包，谢谢！</div>
+                        </div>    
+                        <div style="float:right;height:20px;width:30px;margin:5px;line-height: 50px;">
+                            <i class="layui-icon layui-icon-praise" style="font-size:20px"></i>7
+                        </div>
+                </div>
+                <div style="width:340px;height:60px;margin:30px;">
+                    <div style="float:left">
+                        <img src="resource/img/index page/header_img.jpg" width="50px" height="50px" style="border-radius: 50%;margin:5px;">
+                    </div>
+                        <div style="width:200px;height:50px;float:left;margin:5px;font-style: italic;">
+                            <div style="height:20px;width:100%"><span style="color: rgb(66, 161, 199);">鱼有何欢</span><span class="layui-badge-dot layui-bg-blue" style="margin:auto 5px;"></span>2021.2.18</div>
+                            <div style="height:30px;width:100%;color: rgb(97, 94, 94);">站长好棒噢！嘤嘤嘤</div>
+                        </div>    
+                        <div style="float:right;height:20px;width:30px;margin:5px;line-height: 50px;">
+                            <i class="layui-icon layui-icon-praise" style="font-size:20px"></i>2
+                        </div>
+                </div>
+                <div style="width:340px;height:60px;margin:30px;">
+                    <div style="float:left">
+                        <img src="resource/img/index page/header_img.jpg" width="50px" height="50px" style="border-radius: 50%;margin:5px;">
+                    </div>
+                        <div style="width:200px;height:50px;float:left;margin:5px;font-style: italic;">
+                            <div style="height:20px;width:100%"><span style="color: rgb(66, 161, 199);">dj bounce</span><span class="layui-badge-dot layui-bg-blue" style="margin:auto 5px;"></span>2021.2.15</div>
+                            <div style="height:30px;width:100%;color: rgb(97, 94, 94);">可以出个brooks风格的future bounce教程吗？</div>
+                        </div>    
+                        <div style="float:right;height:20px;width:30px;margin:5px;line-height: 50px;">
+                            <i class="layui-icon layui-icon-praise" style="font-size:20px"></i>16
+                        </div>
+                </div>
+            </div>
+            <div style="margin:20px auto;width:178px;height:200px;">
+                <img src="resource/img/index page/twofrontcode1.jpg" width="178" height="179">
+                <div style="font-family: 宋体;text-align: center;color: rgb(16, 187, 87);font-weight: bold;margin-top:10px;">联系站长请扫码，谢谢！</div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="layui-row" style="width:100%;height:200px;clear: both;background-color: rgb(7, 7, 56);">
+        <div class="layui-col-md4" style="height:100%">
+            <div style="width:300px;height:180px;margin:10px auto 10px 20px;">
+                <img src="resource/img/index page/music_logo.png" width="100px" height="100px" style="border-radius: 25px;">
+                <span><img src="resource/img/index page/foot_logo.png"/></span>
+                <div style="color: rgb(116, 114, 108);margin-top:20px;">COPYRIGHT ©2021</div>
+            </div>
+        </div>
+        <div class="layui-col-md6" style="height:100%">
+            <div style="margin-top: 30px;width:100%;height:150px">
+                <div style="width:200px;float:left;height:50px;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">友情链接</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-wechat" style="font-size: 30px;margin:5px;color:rgb(34, 190, 86)"></i>微信</a></li>
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-qq" style="font-size: 30px;margin:5px;color:rgb(44, 226, 226)"></i>QQ</a></li>
+                        </li>
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-weibo" style="font-size: 30px;margin:5px;color:rgb(223, 27, 174)"></i>微博</a></li>
+                        </li>
+                    </ul>
+                </div>
+                <div style="width:200px;float:left;text-align: left;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">关于我们</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li><a href="#">我们的历史</a></li>
+                        <li><a href="#">我们的目的</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div style="width:200px;float:left;text-align: left;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">产品</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li><a href="#">音乐</a></li>
+                        <li><a href="#">软件/插件</a></li>
+                        <li><a href="#">舞台表演</a></li>
+                        <li><a href="#">职业服务</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md2" style="height:100%;">
+            <div style="width:200px;height:150px;margin:25px auto;text-align: center;">
+                <img src="resource/img/index page/twofrontcode2.jpg" width="100px" height="100px">
+                <div style="color: rgb(116, 114, 108);margin-top:20px;">扫码加入微信群聊</div>
+            </div>                          
+        </div>
+    </div>
+
+
+
+    <form action="" method="post" class="layui-form">
+        <div id="login" style="display: none;">
+            <h2 style="color:rgb(155, 153, 143);margin:40px auto;text-align: center;font-weight: bold;font-style: oblique;">用户登录</h2>
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <i class="layui-icon layui-icon-username"></i>
+                </label>
+                <div class="layui-input-block">
+                    <input type="text" lay-verify="username" name="user_name" placeholder="请输入用户名或邮箱" autocomplete="off" class="layui-input" required="required" style="width:240px">
+                </div>
+                </div>
+                <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <i class="layui-icon layui-icon-password"></i>
+                </label>
+                <div class="layui-input-block">
+                    <input type="text" lay-verify="pass" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input" required="required" style="width:240px">
+                </div>
+                </div>
+                <div class="layui-form-item"  style="margin-top:40px">
+                <div class="layui-input-block">
+                    <button class="layui-btn layui-btn-radius layui-btn-normal" lay-submit lay-filter="dl">登录</button>
+                    <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">重置</button>
+                </div>
+                </div>
+                <div>
+                    <a href="#" id="change_to_logon" style="margin-left:30px">无账号？去注册</a>
+                    <a href="#" style="margin-right:30px;float:right">找回密码</a>
+                </div>
+                
+        </div>
+    </form>
+
+    <form action="" method="post" class="layui-form">
+        <div id="logon" style="display: none;">
+            <h2 style="color:rgb(155, 153, 143);margin:40px auto;text-align: center;font-weight: bold;font-style: oblique;">用户注册</h2>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-username"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" required="required" lay-verify="username" name="user_name" placeholder="设置用户名或邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" required="required" name="password" placeholder="设置输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-release"></i></label>
+                <input type="text" lay-verify="email" required="required" name="email" placeholder="设置邮箱" autocomplete="off" class="layui-input" style="width:240px">
+              </div>
+              <div class="layui-form-item" style="margin-top:40px">
+                <div class="layui-input-block">
+                  <button class="layui-btn layui-btn-radius layui-btn-warm" lay-submit lay-filter="zc">注册</button>
+                  <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">重置</button>
+                </div>
+              </div>
+              <div>
+                    <a href="#" id="change_to_login" style="margin-left:30px">已有账号？去登录</a>
+                    <a href="#" style="margin-right:30px;float:right">找回密码</a>
+              </div>
+        </div>
+    </form>
+    
+
+
+
+
+    <script type="text/javascript" src="layui/layui.all.js"></script>
+    <script type="text/javascript" src="echarts.min.js"></script>
+    <script type="text/javascript" src="vue.min.js"></script>
+    <script type="text/javascript" src="js/form.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
+</body>
+</html>

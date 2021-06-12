@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>采样</title>
+    <link rel="stylesheet" type="text/css" href="../../layui/css/layui.css"/>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background-color: rgb(221, 247, 247);
+        }
+        #header_nav_left img{
+            width:50px;
+            height:50px;
+        }
+        #header_nav_left i{
+            margin:5px;
+        }
+        #header_nav_right i{
+            margin:5px;
+        }
+        #content{
+            margin-top:20px;
+            margin-left:40px;
+            margin-right:40px;
+        }
+        #content h3{
+            margin:20px auto;
+            text-align: center;
+            color:rgb(52, 145, 145);
+        }
+        #content p{
+            color:rgb(102, 109, 109);
+            font-size: 18px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="layui-row">
+        <div class="layui-col-md9">           
+            <ul class="layui-nav" id="header_nav_left">
+                <img class="layui-nav-img" src="../../resource/img/index page/music_logo.png" title="音视网">
+                <li class="layui-nav-item"><a href="../../index.html"><i class="layui-icon layui-icon-home"></i>首页</a></li>
+                <li class="layui-nav-item"><a href="../vedio.html"><i class="layui-icon layui-icon-play"></i>视频教学</a></li>
+                <li class="layui-nav-item"><a href="../audio.html"><i class="layui-icon layui-icon-headset"></i>音频赏析</a></li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">干货资源</a>
+                    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                        <dd><a href="../resource/sample.html">采样包</a></dd>
+                        <dd><a href="../resource/preset.html">合成器预设</a></dd>
+                        <dd><a href="../resource/project.html">工程文件</a></dd>
+                        <dd><a href="../resource/plugin.html">音源插件</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item layui-this"><a href="../article.html"><i class="layui-icon layui-icon-read"></i>必读文章</a></li>
+                <li class="layui-nav-item"><a href="../community.html"><i class="layui-icon layui-icon-group"></i>论坛社区</a></li>
+            </ul>
+        </div>
+        <div class="layui-col-md3">
+            <ul class="layui-nav" id="header_nav_right">
+                <li class="layui-nav-item"><a href="../personal.html"><i class="layui-icon layui-icon-user"></i>个人中心<span class="layui-badge-dot"></span></a></li>
+                <li class="layui-nav-item">
+                    <a href="../personal.html">
+                        <img src="../../resource/img/index page/header_img.jpg" class="layui-nav-img">
+                        <label>我</label>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd>
+                            <a id="_login" href="javascript:;">登录</a>
+                        </dd>
+                        <dd>
+                            <a id="_logon" href="javascript:;">注册</a>
+                        </dd>
+                        <dd>
+                            <a href="#">退出</a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="content" style="background-color: azure;min-height: 400px;">
+        <img width="900px" height="380px" style="position:relative;left:50%;margin-left:-450px;" src="../../resource/img/article page/article1.png"/>
+        <div style="margin:30px;">
+            <h2 style="font-weight: bold;font-family: cursive;">编曲太杂乱？你需要为它“减肥”了。</h2>
+            <p>在如今，电脑可以轻而易举加载几十个甚至上百个乐器轨，以至于很多人喜欢将大量的音乐元素添加到音乐中，渴望听众能够在几分钟内了解到他们的所有想法以及技巧。这样做的效果可能会让作品越来越糟糕，无论是从技术角度还是从音乐欣赏角度来说，这都是很不理智的做法。</p>
+            <h3>01|考虑普通听众</h3>
+            <p>人耳天生有“过滤和筛选”能力。在听一首作品时，耳朵会主动寻找那些最明显、最能吸引它注意的东西。</p>
+            <p>对于没有经过专业训练的普通人，他们的听觉只能同时集中在一条或至多两条旋律线上。如果同时出现过多的声音，耳朵会依照经验去选择他们最喜欢的声音并且忽略掉其他的声音；创作者不同，音乐是自己写的，编曲是自己写的，音轨是自己录的，甚至混音都是自己完成的，太熟悉了，以至于聆听时不会遗漏任何细节。但我们需要考虑，大多数的听众能否如此专注？</p>
+            <h3>02|考虑乐器打架问题</h3>
+            <p>其次，同一时间出现过多的素材，对于混音来讲也不好处理。混音的目的是为了让所有声音占据它们合适的位置，不要互相冲突，从而营造清晰和舒服的声场。可是听觉范围毕竟有限，当出现太多的素材，究竟如何取舍呢？是全都堆在一起？如果没有过硬的混音技术，那结果就是什么都听不清，浑浊一片。</p>
+            <p>所以，不断往作品里填充乐器并不一定能带来饱满感。当有了整体后，我们需要审视歌曲表达的意图。多做减法，删掉一些无足轻重的乐器，将重叠一起的旋律交错开。总而言之，就是用最简单的方法得到最满意的效果，让剩下的音轨更好的融合在一起。</p>
+            <h3>03|删除一些“垃圾”音色</h3>
+            <p>此外，也要保证电脑硬盘里的音色足够“整洁干净”。如果硬盘里塞满了从来没用过也用不到的音源，这会让你在找音源时手忙脚乱，心烦意燥。那这胡乱挑选出来的音色对编曲而言可能就是累赘。</p>
+            <h3>04|总结</h3>
+            <p>编曲将乐器组合成多部分，确定每一件乐器在每一个部分如何演奏，并保证它们互相之间配合的天衣无缝。我们应该检查自己的编曲是否在同一时间内出现太多的乐器，导致乐器之间在旋律和节奏上互相冲突。这会让听众难于把注意力集中在关键的编曲元素上。</p>
+            <p>所以，在开始混音之前，最好反复检查和修改你的编曲。在编曲上花的时间再多都是值得的，它不同于作曲只是对音乐性的提升，也不同于录音和混音是对技术性上的提升，编曲的成功会给这两方面都带来显著的益处。</p>
+        </div>
+        
+    </div>
+
+
+
+    <div class="layui-row" style="width:100%;height:200px;clear: both;background-color: rgb(7, 7, 56);">
+        <div class="layui-col-md4" style="height:100%">
+            <div style="width:300px;height:180px;margin:10px auto 10px 20px;">
+                <img src="../../resource/img/index page/music_logo.png" width="100px" height="100px" style="border-radius: 25px;">
+                <span><img src="../../resource/img/index page/foot_logo.png"/></span>
+                <div style="color: rgb(116, 114, 108);margin-top:20px;">COPYRIGHT ©2021</div>
+            </div>
+        </div>
+        <div class="layui-col-md6" style="height:100%">
+            <div style="margin-top: 30px;width:100%;height:150px">
+                <div style="width:200px;float:left;height:50px;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">友情链接</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-wechat" style="font-size: 30px;margin:5px;color:rgb(34, 190, 86)"></i>微信</a></li>
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-qq" style="font-size: 30px;margin:5px;color:rgb(44, 226, 226)"></i>QQ</a></li>
+                        </li>
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-weibo" style="font-size: 30px;margin:5px;color:rgb(223, 27, 174)"></i>微博</a></li>
+                        </li>
+                    </ul>
+                </div>
+                <div style="width:200px;float:left;text-align: left;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">关于我们</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li><a href="#">我们的历史</a></li>
+                        <li><a href="#">我们的目的</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div style="width:200px;float:left;text-align: left;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">产品</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li><a href="#">音乐</a></li>
+                        <li><a href="#">软件/插件</a></li>
+                        <li><a href="#">舞台表演</a></li>
+                        <li><a href="#">职业服务</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md2" style="height:100%;">
+            <div style="width:200px;height:150px;margin:25px auto;text-align: center;">
+                <img src="../../resource/img/index page/twofrontcode2.jpg" width="100px" height="100px">
+                <div style="color: rgb(116, 114, 108);margin-top:20px;">扫码加入微信群聊</div>
+            </div>                          
+        </div>
+    </div>
+
+
+
+    <form action="" method="get" class="layui-form">
+        <div id="login" style="display: none;">
+            <h2 style="color:rgb(155, 153, 143);margin:40px auto;text-align: center;font-weight: bold;font-style: oblique;">用户登录</h2>
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <i class="layui-icon layui-icon-username"></i>
+                </label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="username|email" name="" placeholder="请输入用户名或邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <i class="layui-icon layui-icon-password"></i>
+                </label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" name="" placeholder="请输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item"  style="margin-top:40px">
+                <div class="layui-input-block">
+                  <button class="layui-btn layui-btn-radius layui-btn-normal" lay-submit lay-filter="*">登录</button>
+                  <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">重置</button>
+                </div>
+              </div>
+              <div>
+                    <a href="#" id="change_to_logon" style="margin-left:30px">无账号？去注册</a>
+                    <a href="#" style="margin-right:30px;float:right">找回密码</a>
+              </div>
+            
+        </div>
+    </form>
+
+    <form action="" method="get" class="layui-form">
+        <div id="logon" style="display: none;">
+            <h2 style="color:rgb(155, 153, 143);margin:40px auto;text-align: center;font-weight: bold;font-style: oblique;">用户注册</h2>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-username"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="username|email" name="" placeholder="设置用户名或邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" name="" placeholder="设置输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" name="" placeholder="确认输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item"  style="margin-top:40px">
+                <div class="layui-input-block">
+                  <button class="layui-btn layui-btn-radius layui-btn-warm" lay-submit lay-filter="*">注册</button>
+                  <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">重置</button>
+                </div>
+              </div>
+              <div>
+                    <a href="#" id="change_to_login" style="margin-left:30px">已有账号？去登录</a>
+                    <a href="#" style="margin-right:30px;float:right">找回密码</a>
+              </div>
+            
+        </div>
+    </form>
+    
+
+
+
+
+    <script type="text/javascript" src="../../layui/layui.all.js"></script>
+    <script>
+        layui.use(['element','carousel','layer','form'],function(){
+            var element=layui.element,
+            $=layui.$,
+            form=layui.form,
+            layer=layui.layer,
+            carousel=layui.carousel;
+            carousel.render({
+            elem: '#test1'
+            ,width: '100%' //设置容器宽度
+            ,height:'400px'
+            ,arrow: 'always' //始终显示箭头
+            //,anim: 'updown' //切换动画方式
+            });
+            $('#btn1,#_login').on('click',function(){
+                layer.open({
+                    type:1,
+                    title:false,
+                    area:['400px','400px'],
+                    content:$('#login')
+                })
+            });
+            $('#change_to_logon').on('click',function(){
+                layer.closeAll();
+                layer.open({
+                    type:1,
+                    title:false,
+                    area:['400px','400px'],
+                    content:$('#logon')
+                })
+            });
+            $('#btn2,#_logon').on('click',function(){
+                layer.open({
+                    type:1,
+                    title:false,
+                    area:['400px','400px'],
+                    content:$('#logon')
+                })
+            });
+            $('#change_to_login').on('click',function(){
+                layer.closeAll();
+                layer.open({
+                    type:1,
+                    title:false,
+                    area:['400px','400px'],
+                    content:$('#login')
+                })
+            });
+
+        })
+    </script>
+    <!-- <script>
+        function login_btn(){
+            window.location.href="./page/login.html"
+        }
+        function logon_btn(){
+            window.location.href="./page/logon.html"
+        }
+    </script> -->
+</body>
+</html>

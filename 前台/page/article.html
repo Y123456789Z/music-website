@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章</title>
+    <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css"/>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background-color: #2f3542;
+        }
+        #header_nav_left img{
+            width:50px;
+            height:50px;
+        }
+        #header_nav_left i{
+            margin:5px;
+        }
+        #header_nav_right i{
+            margin:5px;
+        }
+        #content{
+            margin-top:20px;
+            width:1200px;
+            margin:30px auto;
+        }
+        .atl{
+            background-color: beige;
+            width:1150px;
+            border-radius: 20px;
+            min-height: 100px;
+            padding:20px;
+            margin:30px auto;          
+        }
+        .atl .atl_div{
+            width:800px;
+            margin:auto auto;
+            
+        }
+        h2{
+            text-align: center;
+            color:rgb(82, 79, 77)
+        }
+        .ani{
+            width:100px;
+            background-color: rgb(95, 204, 109);
+            height:5px;
+            margin:auto auto;
+        }
+        .ani:hover{
+            
+            animation: change 1s;
+        }
+        @keyframes change {
+            0%,100%{
+                width:100px;
+            }
+            50%{
+                width:200px;
+            }
+        }
+        .atl_div ul{
+            margin-top:20px;
+        }
+        .atl_div ul li{
+            margin:10px 0px;
+            font-size: 18px;
+        }
+        .atl_div ul li span:nth-child(1){
+            color:rgb(129, 127, 124);
+        }
+        .atl_div ul li span:nth-child(2){
+            margin-left:60px;
+            color:rgb(62, 71, 71);
+            font-family:serif;
+            font-weight:bold ;
+        }
+        .atl_div ul li span:nth-child(3){
+            color:rgb(45, 131, 131);
+            margin-left:30px;
+            font-family:serif;
+            font-weight:bold ;
+        }
+    </style>
+</head>
+<body>
+    <div class="layui-row">
+        <div class="layui-col-md9">           
+            <ul class="layui-nav" id="header_nav_left">
+                <img class="layui-nav-img" src="../resource/img/index page/music_logo.png" title="音视网">
+                <li class="layui-nav-item"><a href="../index.html"><i class="layui-icon layui-icon-home"></i>首页</a></li>
+                <li class="layui-nav-item"><a href="vedio.html"><i class="layui-icon layui-icon-play"></i>视频教学</a></li>
+                <li class="layui-nav-item"><a href="audio.html"><i class="layui-icon layui-icon-headset"></i>音频赏析</a></li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">干货资源</a>
+                    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                        <dd><a href="resource/sample.html">采样包</a></dd>
+                        <dd><a href="resource/preset.html">合成器预设</a></dd>
+                        <dd><a href="resource/project.html">工程文件</a></dd>
+                        <dd><a href="resource/plugin.html">音源插件</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item layui-this"><a href="#"><i class="layui-icon layui-icon-read"></i>必读文章</a></li>
+                <li class="layui-nav-item"><a href="community.html"><i class="layui-icon layui-icon-group"></i>论坛社区</a></li>
+            </ul>
+        </div>
+        <div class="layui-col-md3">
+            <ul class="layui-nav" id="header_nav_right">
+                <li class="layui-nav-item"><a href="personal.html"><i class="layui-icon layui-icon-user"></i>个人中心<span class="layui-badge-dot"></span></a></li>
+                <li class="layui-nav-item">
+                    <a href="personal.html">
+                        <img src="../resource/img/index page/header_img.jpg" class="layui-nav-img">
+                        <label>我</label>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd>
+                            <a id="_login" href="javascript:;">登录</a>
+                        </dd>
+                        <dd>
+                            <a id="_logon" href="javascript:;">注册</a>
+                        </dd>
+                        <dd>
+                            <a href="../index.html" onclick="out()">退出</a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="content">
+        <div>
+            <form class="layui-form" style="float: left;">
+                <i class="layui-icon layui-icon-speaker" style="font-size: 30px;color: #ff6b81;"></i>
+                <span style="color: #ff7f50;font-size:18px;font-weight: bold;font-family:cursive">公告：</span>
+                <label id="gong_gao" style="color:#7bed9f;font-size: 16px;font-weight: bold;"></label>
+            </form>
+            <form class="layui-form" style="float: right;">
+                <div class="layui-form-item">
+                    <div class="layui-input-inline" style="width:240px">
+                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索内容" autocomplete="off" class="layui-input">
+                    
+                    </div>
+                    <button class="layui-btn layui-btn-radius layui-btn-warm layui-anim layui-anim-scale" style="width:80px;" onclick="search()">搜索</button>
+                </div>
+            </form>
+        </div>
+
+
+            <hr class="layui-bg-green">
+            <div>
+                <img src="../resource/img/article page/top.PNG" width="1200px" height="380px" style="border-radius: 25px;"/>
+            </div>
+            <hr class="layui-bg-orange">
+            <div class="atl">
+                <div class="atl_div">
+                    <h2>2021年2月</h2>
+                    <div class="ani"></div>
+                    <ul>
+                        <li><span>26日</span><span><a href="details/article1.html">编曲太杂乱？你需要为它“减肥”了。</a></span><span>类型：编曲</span></li>
+                        <li><span>18日</span><span><a href="details/article2.html">如何用管弦乐编写出不同的情绪风格？</a></span><span>类型：编曲</span></li>
+                        <li><span>6日</span><span><a href="details/article3.html">离调就这么简单：副属和弦的运用</a></span><span>类型：乐理</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="atl">
+                <div class="atl_div">
+                    <h2>2021年1月</h2>
+                    <div class="ani"></div>
+                    <ul>
+                        <li><span>22日</span><span><a href="details/article4.html">什么是压缩器？如何在混音中使用压缩器？</a></span><span>类型：混音</span></li>
+                        <li><span>21日</span><span><a href="#">最全梳理，流行歌曲中的各类离调技巧，这才是和声的正确玩法！</a></span><span>类型：乐理</span></li>
+                        <li><span>11日</span><span><a href="#">流行歌曲怎么写才好听？音乐人必备的作曲技巧！</a></span><span>类型：编曲</span></li>
+                        <li><span>2日</span><span><a href="#">40条音阶调式大全，学音乐必备！</a></span><span>类型：乐理</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="atl">
+                <div class="atl_div">
+                    <h2>2020年12月</h2>
+                    <div class="ani"></div>
+                    <ul>
+                        <li><span>18日</span><span><a href="#">最全的音乐制作电脑配置方案推荐，流畅到起飞！</a></span><span>类型：方案</span></li>                       
+                    </ul>
+                </div>
+            </div>
+            <div class="atl">
+                <div class="atl_div">
+                    <h2>2020年11月</h2>
+                    <div class="ani"></div>
+                    <ul>
+                        <li><span>25日</span><span><a href="#">歌曲和声太单调？这份《进阶乐理之扩展音》使用手册请收好！</a></span><span>类型：乐理</span></li>
+                        <li><span>13日</span><span><a href="#">有关和声、曲式、复调、旋律写作、配器、对位的解析</a></span><span>类型：乐理</span></li>                       
+                    </ul>
+                </div>
+            </div>
+            <div class="atl">
+                <div class="atl_div">
+                    <h2>2020年5月</h2>
+                    <div class="ani"></div>
+                    <ul>
+                        <li><span>26日</span><span><a href="#">只会写单旋律？教你快速编写人声和声及混音处理。</a></span><span>类型：编曲</span></li>
+                        <li><span>12日</span><span><a href="#">关于和声、流行、摇滚编配的超全编曲心得分享！</a></span><span>类型：编曲</span></li>
+                        <li><span>10日</span><span><a href="#">爵士乐理篇！七大中古调式你掌握了吗？</a></span><span>类型：乐理</span></li>
+                        <li><span>5日</span><span><a href="#">电音制作必备！用合成器制作想要的音色！</a></span><span>类型：方案</span></li>
+                        <li><span>2日</span><span><a href="#">如何融入蓝调（布鲁斯），让音乐更有品味？</a></span><span>类型：编曲</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="atl">
+                <div class="atl_div">
+                    <h2>2020年2月</h2>
+                    <div class="ani"></div>
+                    <ul>
+                        <li><span>27日</span><span><a href="#">Do Re Mi Fa…这些音是怎么诞生的？十二平均律如何得出？</a></span><span>类型：乐理</span></li>
+                        <li><span>16日</span><span><a href="#">拯救你唱歌跑调，快速上手修音神器Melodyne。</a></span><span>类型：修音</span></li>
+                        <li><span>6日</span><span><a href="#">教你合理划分编曲层次，让音乐更加丰富。</a></span><span>类型：编曲</span></li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+
+
+
+    <div class="layui-row" style="width:100%;height:200px;background-color: rgb(7, 7, 56);clear: both;">
+        <div class="layui-col-md4" style="height:100%">
+            <div style="width:300px;height:180px;margin:10px auto 10px 20px;">
+                <img src="../resource/img/index page/music_logo.png" width="100px" height="100px" style="border-radius: 25px;">
+                <span><img src="../resource/img/index page/foot_logo.png"/></span>
+                <div style="color: rgb(116, 114, 108);margin-top:20px;">COPYRIGHT ©2021</div>
+            </div>
+        </div>
+        <div class="layui-col-md6" style="height:100%">
+            <div style="margin-top: 30px;width:100%;height:150px">
+                <div style="width:200px;float:left;height:50px;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">友情链接</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-wechat" style="font-size: 30px;margin:5px;color:rgb(34, 190, 86)"></i>微信</a></li>
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-qq" style="font-size: 30px;margin:5px;color:rgb(44, 226, 226)"></i>QQ</a></li>
+                        </li>
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-weibo" style="font-size: 30px;margin:5px;color:rgb(223, 27, 174)"></i>微博</a></li>
+                        </li>
+                    </ul>
+                </div>
+                <div style="width:200px;float:left;text-align: left;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">关于我们</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li><a href="#">我们的历史</a></li>
+                        <li><a href="#">我们的目的</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div style="width:200px;float:left;text-align: left;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">产品</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li><a href="#">音乐</a></li>
+                        <li><a href="#">软件/插件</a></li>
+                        <li><a href="#">舞台表演</a></li>
+                        <li><a href="#">职业服务</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md2" style="height:100%;">
+            <div style="width:200px;height:150px;margin:25px auto;text-align: center;">
+                <img src="../resource/img/index page/twofrontcode2.jpg" width="100px" height="100px">
+                <div style="color: rgb(116, 114, 108);margin-top:20px;">扫码加入微信群聊</div>
+            </div>                          
+        </div>
+    </div>
+
+
+    <form action="" method="post" class="layui-form">
+        <div id="login" style="display: none;">
+            <h2 style="color:rgb(155, 153, 143);margin:40px auto;text-align: center;font-weight: bold;font-style: oblique;">用户登录</h2>
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <i class="layui-icon layui-icon-username"></i>
+                </label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="username" name="user_name" placeholder="请输入用户名或邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <i class="layui-icon layui-icon-password"></i>
+                </label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item"  style="margin-top:40px">
+                <div class="layui-input-block">
+                  <button class="layui-btn layui-btn-radius layui-btn-normal" lay-submit lay-filter="dl">登录</button>
+                  <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">重置</button>
+                </div>
+              </div>
+              <div>
+                    <a href="#" id="change_to_logon" style="margin-left:30px">无账号？去注册</a>
+                    <a href="#" style="margin-right:30px;float:right">找回密码</a>
+              </div>
+            
+        </div>
+    </form>
+
+    <form action="" method="post" class="layui-form">
+        <div id="logon" style="display: none;">
+            <h2 style="color:rgb(155, 153, 143);margin:40px auto;text-align: center;font-weight: bold;font-style: oblique;">用户注册</h2>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-username"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="username" name="user_name" placeholder="设置用户名或邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" name="password" placeholder="设置输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+                <div class="layui-input-block">
+                    <label class="layui-form-label"><i class="layui-icon layui-icon-release"></i></label>
+                    <input type="text" lay-verify="email" required="required" name="email" placeholder="设置邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item"  style="margin-top:40px">
+                <div class="layui-input-block">
+                  <button class="layui-btn layui-btn-radius layui-btn-warm" lay-submit lay-filter="zc">注册</button>
+                  <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">重置</button>
+                </div>
+              </div>
+              <div>
+                    <a href="#" id="change_to_login" style="margin-left:30px">已有账号？去登录</a>
+                    <a href="#" style="margin-right:30px;float:right">找回密码</a>
+              </div>
+            
+        </div>
+    </form>
+
+
+    
+    <script type="text/javascript" src="../layui/layui.all.js"></script>
+    <script type="text/javascript" src="../echarts.min.js"></script>
+    <script type="text/javascript" src="../vue.min.js"></script>
+    <script type="text/javascript" src="../js/form.js"></script>
+    <script type="text/javascript" src="../js/search.js"></script>
+    
+    <!-- <scrip>
+        function login_btn(){
+            window.location.href="./page/login.html"
+        }
+        function logon_btn(){
+            window.location.href="./page/logon.html"
+        }
+    </scrip> -->
+</body>
+</html>

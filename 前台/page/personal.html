@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心页</title>
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css"/>
+    <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script> 
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background-color: #2f3542;
+        }
+        #header_nav_left img{
+            width:50px;
+            height:50px;
+        }
+        #header_nav_left i{
+            margin:5px;
+        }
+        #header_nav_right i{
+            margin:5px;
+        }
+        #content{
+            margin-top:20px;
+            width:1200px;
+            margin:30px auto;
+        }
+        #message1 ul li{
+            margin:30px auto;
+        }
+        #message1 ul li label{
+            font-size: 18px;
+            color:#dfe4ea;
+            font-family:cursive;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="layui-row">
+        <div class="layui-col-md9">           
+            <ul class="layui-nav" id="header_nav_left">
+                <img class="layui-nav-img" src="../resource/img/index page/music_logo.png" title="音视网">
+                <li class="layui-nav-item"><a href="../index.html"><i class="layui-icon layui-icon-home"></i>首页</a></li>
+                <li class="layui-nav-item"><a href="vedio.html"><i class="layui-icon layui-icon-play"></i>视频教学</a></li>
+                <li class="layui-nav-item"><a href="audio.html"><i class="layui-icon layui-icon-headset"></i>音频赏析</a></li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">干货资源</a>
+                    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                        <dd><a href="resource/sample.html">采样包</a></dd>
+                        <dd><a href="resource/preset.html">合成器预设</a></dd>
+                        <dd><a href="resource/project.html">工程文件</a></dd>
+                        <dd><a href="resource/plugin.html">音源插件</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="article.html"><i class="layui-icon layui-icon-read"></i>必读文章</a></li>
+                <li class="layui-nav-item"><a href="community.html"><i class="layui-icon layui-icon-group"></i>论坛社区</a></li>
+            </ul>
+        </div>
+        <div class="layui-col-md3">
+            <ul class="layui-nav" id="header_nav_right">
+                <li class="layui-nav-item layui-this"><a href="#"><i class="layui-icon layui-icon-user"></i>个人中心<span class="layui-badge-dot"></span></a></li>
+                <li class="layui-nav-item">
+                    <a href="personal.html">
+                        <img src="../resource/img/index page/header_img.jpg" class="layui-nav-img">
+                        <label>我</label>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd>
+                            <a id="_login" href="javascript:;">登录</a>
+                        </dd>
+                        <dd>
+                            <a id="_logon" href="javascript:;">注册</a>
+                        </dd>
+                        <dd>
+                            <a href="../index.html" onclick="out()">退出</a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="content" style="min-height: 400px;">
+            
+            <hr class="layui-bg-green">
+            <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                <ul class="layui-tab-title" style="font-weight: bold;color:#a4b0be">
+                    <li class="layui-this"><i class="layui-icon layui-icon-user" style="margin:0 5px"></i>个人资料</li>
+                    <li><i class="layui-icon layui-icon-dialogue" style="margin:0 5px"></i>留言/回复信息</li>
+                </ul>
+                <div class="layui-tab-content" style="background-color: #747d8c;">
+                    <div class="layui-tab-item layui-show" id="message1">
+                        <form action="" method="post" class="layui-form">
+                            <ul style="float:left;margin-left:100px;">
+                                <li><div class="layui-form-item">
+                                    <label class="layui-form-label" style="white-space: nowrap;">
+                                        昵称/用户名
+                                    </label>
+                                    <div class="layui-input-block" style="position:absolute;margin-left:150px;">
+                                        <input id="m1" type="text" lay-verify="username" name="user_name" placeholder="请输入用户名或邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                                      </div>
+                                </div></li>
+                                <li>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label" style="white-space: nowrap;">
+                                            密码
+                                        </label>
+                                        <div class="layui-input-block" style="position:absolute;margin-left:150px;">
+                                            <input id="m2" type="text" lay-verify="password" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                                          </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label" style="white-space: nowrap;">
+                                            邮箱
+                                        </label>
+                                        <div class="layui-input-block" style="position:absolute;margin-left:150px;">
+                                            <input id="m3" type="text" lay-verify="email" name="email" placeholder="请输入邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                                          </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label" style="white-space: nowrap;">
+                                            性别
+                                        </label>
+                                        <div class="layui-input-block" style="position:absolute;margin-left:150px;">
+                                            <select name="interest" class="layui-select" lay-filter="sex" style="width:240px;">
+                                                <option class="m4" value="0">保密</option>
+                                                <option class="m4" value="1">男</option>
+                                                <option class="m4" value="2">女</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label" style="white-space: nowrap;">
+                                            QQ
+                                        </label>
+                                        <div class="layui-input-block" style="position:absolute;margin-left:150px;">
+                                            <input id="m5" type="text" lay-verify="" name="qq" placeholder="请输入QQ号" autocomplete="off" class="layui-input" style="width:240px">
+                                          </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul style="float:left;margin-left:500px;">
+                                <li>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label" style="white-space: nowrap;">
+                                            微信
+                                        </label>
+                                        <div class="layui-input-block" style="position:absolute;margin-left:150px;">
+                                            <input id="m6" type="text" lay-verify="" name="wx" placeholder="请输入微信号" autocomplete="off" class="layui-input" style="width:240px">
+                                          </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label" style="white-space: nowrap;">
+                                            微博
+                                        </label>
+                                        <div class="layui-input-block" style="position:absolute;margin-left:150px;">
+                                            <input id="m7" type="text" lay-verify="" name="wb" placeholder="请输入微博号" autocomplete="off" class="layui-input" style="width:240px">
+                                          </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label" style="white-space: nowrap;">
+                                            签名
+                                        </label>
+                                        <div class="layui-input-block" style="position:absolute;margin-left:150px;">
+                                            <input id="m8" type="text" lay-verify="" name="qianming" placeholder="填写你的签名" autocomplete="off" class="layui-input" style="width:240px">
+                                          </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label" style="white-space: nowrap;">
+                                            个人网站
+                                        </label>
+                                        <div class="layui-input-block" style="position:absolute;margin-left:150px;">
+                                            <input id="m9" type="text" lay-verify="" name="site" placeholder="输入你的网站地址" autocomplete="off" class="layui-input" style="width:240px">
+                                          </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label" style="white-space: nowrap;">
+                                            GITHUB
+                                        </label>
+                                        <div class="layui-input-block" style="position:absolute;margin-left:150px;">
+                                            <input id="m10" type="text" lay-verify="" name="github" placeholder="输入你的github地址" autocomplete="off" class="layui-input" style="width:240px">
+                                          </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div style="clear: both;"></div>
+                            <button type="button" style="position:absolute;left:50%;margin-left:-100px;margin-top: 20px;" lay-submit class="layui-btn layui-btn-radius layui-btn-normal" lay-filter="change">确认修改</button>
+                            <button style="position:absolute;left:50%;margin-left:100px;margin-top: 20px;" type="reset" class="layui-btn layui-btn-radius layui-btn-primary">取消修改</button>
+                        </form>
+                    </div>
+
+
+                    <div class="layui-tab-item" id="message2" style="min-height: 400px;overflow: scroll;">
+                        <!-- <form id="pp" method="post" action="" style="width:800px;height:320px;background-color: #f1f2f6;margin:auto auto;display: none;">
+                            <h3 style="margin:20px 50px;color:#747d8c;">给用户：<span id="user" name="reply_user_id"></span>留言</h3>
+                            <textarea name="desc" placeholder="请输入内容" style="width:700px;height:200px;border-style: none;margin-left:50px;padding:10px;"></textarea>
+                            <button style="margin-left:300px;" class="layui-btn layui-btn-radius layui-btn-normal" lay-submit lay-filter="huifu">发表</button>
+                            <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">取消</button>
+                        </form> -->
+                    </div>
+
+
+                    <!-- <div class="layui-tab-item" style="min-height: 400px;">
+                        <div style="background-color: #ffffff;height:100px;width:300px;border-radius: 20px;padding:20px;float:left;">
+                            <h3>数据统计</h3>
+                            <span>我的积分：</span>
+                            <span id="jifen"></span>
+                        </div>
+                        <div style="width:500px;height:500px;background-color: #ffffff;float:right;border-radius: 20px;padding:20px;">
+                            <h3>上传</h3>
+                            <div>请在下方上传封面图片，建议尺寸400x400</div>
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <div style="width:300px;height:300px;background-color: #f1f2f6;margin:auto auto;">
+                                    <img src="" id="show_img"/>
+                                </div>
+                                <input id="get_img" type="file" name="img">
+                            </form>
+                        </div>
+                        <div style="width:500px;height:500px;background-color: #ffffff;float:left;border-radius: 20px;padding:20px;overflow: scroll;margin-top:20px;">
+                            <h3>上传记录</h3>
+                            
+                        </div>
+                    </div> -->
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+            <hr class="layui-bg-orange" style="margin-top:60px;">
+    </div>
+
+
+
+    <div class="layui-row" style="width:100%;height:200px;background-color: rgb(7, 7, 56);clear: both;">
+        <div class="layui-col-md4" style="height:100%">
+            <div style="width:300px;height:180px;margin:10px auto 10px 20px;">
+                <img src="../resource/img/index page/music_logo.png" width="100px" height="100px" style="border-radius: 25px;">
+                <span><img src="../resource/img/index page/foot_logo.png"/></span>
+                <div style="color: rgb(116, 114, 108);margin-top:20px;">COPYRIGHT ©2021</div>
+            </div>
+        </div>
+        <div class="layui-col-md6" style="height:100%">
+            <div style="margin-top: 30px;width:100%;height:150px">
+                <div style="width:200px;float:left;height:50px;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">友情链接</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-wechat" style="font-size: 30px;margin:5px;color:rgb(34, 190, 86)"></i>微信</a></li>
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-qq" style="font-size: 30px;margin:5px;color:rgb(44, 226, 226)"></i>QQ</a></li>
+                        </li>
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-weibo" style="font-size: 30px;margin:5px;color:rgb(223, 27, 174)"></i>微博</a></li>
+                        </li>
+                    </ul>
+                </div>
+                <div style="width:200px;float:left;text-align: left;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">关于我们</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li><a href="#">我们的历史</a></li>
+                        <li><a href="#">我们的目的</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div style="width:200px;float:left;text-align: left;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">产品</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li><a href="#">音乐</a></li>
+                        <li><a href="#">软件/插件</a></li>
+                        <li><a href="#">舞台表演</a></li>
+                        <li><a href="#">职业服务</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md2" style="height:100%;">
+            <div style="width:200px;height:150px;margin:25px auto;text-align: center;">
+                <img src="../resource/img/index page/twofrontcode2.jpg" width="100px" height="100px">
+                <div style="color: rgb(116, 114, 108);margin-top:20px;">扫码加入微信群聊</div>
+            </div>                          
+        </div>
+    </div>
+    <form action="" method="post" class="layui-form">
+        <div id="login" style="display: none;">
+            <h2 style="color:rgb(155, 153, 143);margin:40px auto;text-align: center;font-weight: bold;font-style: oblique;">用户登录</h2>
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <i class="layui-icon layui-icon-username"></i>
+                </label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="username" name="user_name" placeholder="请输入用户名或邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <i class="layui-icon layui-icon-password"></i>
+                </label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item"  style="margin-top:40px">
+                <div class="layui-input-block">
+                  <button class="layui-btn layui-btn-radius layui-btn-normal" lay-submit lay-filter="dl">登录</button>
+                  <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">重置</button>
+                </div>
+              </div>
+              <div>
+                    <a href="#" id="change_to_logon" style="margin-left:30px">无账号？去注册</a>
+                    <a href="#" style="margin-right:30px;float:right">找回密码</a>
+              </div>
+        </div>
+    </form>
+
+    <form action="" method="post" class="layui-form">
+        <div id="logon" style="display: none;">
+            <h2 style="color:rgb(155, 153, 143);margin:40px auto;text-align: center;font-weight: bold;font-style: oblique;">用户注册</h2>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-username"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="username" name="user_name" placeholder="设置用户名或邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" name="password" placeholder="设置输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-release"></i></label>
+                <div class="layui-input-block">
+                    <input type="text" lay-verify="email" required="required" name="email" placeholder="设置邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item"  style="margin-top:40px">
+                <div class="layui-input-block">
+                  <button class="layui-btn layui-btn-radius layui-btn-warm" lay-submit lay-filter="zc">注册</button>
+                  <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">重置</button>
+                </div>
+              </div>
+              <div>
+                    <a href="#" id="change_to_login" style="margin-left:30px">已有账号？去登录</a>
+                    <a href="#" style="margin-right:30px;float:right">找回密码</a>
+              </div>
+            
+        </div>
+    </form>
+    <script type="text/javascript" src="../layui/layui.all.js"></script>
+    <script type="text/javascript" src="../js/form.js"></script>
+    <script>
+        //修改个人信息
+        if(sessionStorage.username==null){
+            layer.msg("请登录后查看个人信息")
+        }
+        else{
+        //     var message_content=document.getElementById("item");
+        // var xhr=new XMLHttpRequest();
+        // xhr.onreadystatechange=function(){
+        //     if(xhr.readyState==4 && xhr.status==200){
+        //         message_content.innerHTML=xhr.responseText;
+        //     }
+        // };
+        // var data={username:sessionStorage.username};
+        // xhr.open("post","http://127.0.0.1:3000/personal_message",true);
+        // xhr.send(JSON.stringify(data));
+            $.ajax({
+                type:"post",
+                url:"http://127.0.0.1:3000/personal_message",
+                dataType:"JSON",
+                data:{username:sessionStorage.username},
+                success:function(result){
+                    if(result.code==400){
+                        layer.msg(result.data);
+                    }
+                    else if(result.code==600){
+                        var person_message=JSON.stringify(result.data);
+                        console.log(person_message);
+                        console.log(JSON.parse(person_message));
+                        document.getElementById("m1").value=JSON.parse(person_message)[0].user_name;
+                        document.getElementById("m2").value=JSON.parse(person_message)[0].password;
+                        document.getElementById("m3").value=JSON.parse(person_message)[0].email;
+                        document.getElementsByClassName("m4")[0].value=JSON.parse(person_message)[0].sex;
+                        document.getElementById("m5").value=JSON.parse(person_message)[0].qq;
+                        document.getElementById("m6").value=JSON.parse(person_message)[0].wx;
+                        document.getElementById("m7").value=JSON.parse(person_message)[0].wb;
+                        document.getElementById("m8").value=JSON.parse(person_message)[0].qianming;
+                        document.getElementById("m9").value=JSON.parse(person_message)[0].person_website;
+                        document.getElementById("m10").value=JSON.parse(person_message)[0].github;
+
+                        // document.getElementById("jifen").innerHTML=JSON.parse(person_message)[0].jifen;
+                    }
+                },
+                error:function(err){
+                    if(err){
+                        alert(JSON.stringify(err));
+                    }
+                }
+            });
+            //查看个人留言信息
+            $.ajax({
+                type:"post",
+                url:"http://127.0.0.1:3000/liu_yan_message",
+                dataType:"JSON",
+                data:{username:sessionStorage.username},
+                success:function(_result){
+                    var liu_yan_message=document.getElementById("message2")
+                    if(_result.code==900){
+                        console.log(_result.message);
+                        var mm=document.createTextNode(_result.message)
+                        liu_yan_message.appendChild(mm);
+                        liu_yan_message.style.fontSize="18px";
+                        liu_yan_message.style.fontWeight="bold";
+                        liu_yan_message.style.textAlign="center";
+                        liu_yan_message.style.marginTop="100px";
+                    }
+                    else if(_result.code==1000){
+                        console.log(_result.data.data1.length+_result.data.data2.length);
+                        for(var j=0;j<_result.data.data1.length;j++){
+                                var item1=document.createElement("div");
+                                item1.style.width="1100px";
+                                item1.style.height="50px";
+                                item1.style.color="#dfe4ea";
+                                item1.style.backgroundColor="#2f3542";
+                                item1.style.position="relative";
+                                item1.style.marginTop="20px";
+                                //item1.style.padding="10px";
+                                var a=document.createElement("span");
+                                a.innerHTML=sessionStorage.username;
+                                a.style.marginLeft="20px";
+                                a.style.marginRight="40px";
+                                a.style.lineHeight="50px";
+                                var b=document.createElement("span");
+                                b.innerHTML="我的留言："+_result.data.data1[j].text;
+                                var c=document.createElement("span");
+                                c.innerHTML="发表时间："+_result.data.data1[j].time;
+                                c.style.position="absolute";
+                                c.style.left="700px";
+                                c.style.lineHeight="50px";
+                                var d=document.createElement("span");
+                                d.innerHTML='<i class="layui-icon layui-icon-praise" style="font-size:20px"></i>';
+                                d.style.position="absolute";
+                                d.style.right="100px";
+                                d.style.lineHeight="50px";
+                                var e=document.createElement("span");
+                                e.innerHTML=_result.data.data1[j]._like;
+                                e.style.position="absolute";
+                                e.style.right="80px";
+                                e.style.lineHeight="50px";
+                                item1.appendChild(a);
+                                item1.appendChild(b);
+                                item1.appendChild(c);
+                                item1.appendChild(d);
+                                item1.appendChild(e);
+                                liu_yan_message.appendChild(item1);
+                                if(_result.data.data2[j]!=null){
+                                    for(var k=0;k<_result.data.data2.length;k++){
+                                        var dd=_result.data.data2[k];
+                                        if(_result.data.data2[k].reply_for_id==_result.data.data1[j].message_id){
+                                            var f=document.createElement("div");
+                                        // f.innerHTML=_result.data.data2[k].reply_text;
+                                        f.style.minHeight="50px";
+                                        f.style.width="1000px";
+                                        f.style.marginLeft="100px";
+                                        f.style.backgroundColor="#dfe4ea";
+                                        f.style.position="relative";
+                                        f.style.marginTop="20px";
+                                        var g=document.createElement("span");
+                                        g.innerHTML="用户："+_result.data.data2[k].reply_username;
+                                        g.style.lineHeight="50px";
+                                        g.style.marginLeft="20px";
+                                        g.style.marginRight="50px";
+                                        var g1=_result.data.data2[j].reply_username;
+                                        var h=document.createElement("span");
+                                        h.innerHTML="用户留言："+_result.data.data2[k].reply_text;
+                                        var l=document.createElement("span");
+                                        l.innerHTML="留言时间："+_result.data.data2[k].reply_time;
+                                        l.style.position="absolute";
+                                        l.style.left="500px";
+                                        l.style.lineHeight="50px";
+                                        var m=document.createElement("span");
+                                        m.innerHTML='<i class="layui-icon layui-icon-praise" style="font-size:20px"></i>';
+                                        m.style.position="absolute";
+                                        m.style.left="800px";
+                                        m.style.lineHeight="50px";
+                                        var n=document.createElement("span");
+                                        n.innerHTML=_result.data.data2[k].reply_like;
+                                        n.style.position="absolute";
+                                        n.style.left="830px";
+                                        n.style.lineHeight="50px";
+                                        var huifu=document.createElement("input");
+                                        huifu.style.position="absolute";
+                                        huifu.style.left="900px";
+                                        huifu.style.width="80px";
+                                        huifu.style.height="30px";
+                                        huifu.style.marginTop="10px";
+                                        huifu.setAttribute("class","layui-btn layui-btn-primary layui-border-orange");
+                                        huifu.type="button";
+                                        huifu.value="回复";
+                                        
+                                        // f.setAttribute("class","msg_item");
+                                        //var p=document.getElementsByClassName("msg_item")
+                                        
+                                        f.appendChild(g);
+                                        f.appendChild(h);
+                                        f.appendChild(l);
+                                        f.appendChild(m);
+                                        f.appendChild(n);
+                                        f.appendChild(huifu);
+                                        
+                                        var o=document.createElement("form");
+                                        o.style.width="600px";
+                                        o.style.height="200px";
+                                        o.style.backgroundColor="#f1f2f6";
+                                        o.style.margin="auto auto";
+                                        o.style.padding="20px";
+                                        var p=document.createElement("textarea");
+                                        p.style.borderStyle="none";
+                                        p.style.width="500px";
+                                        p.style.height="150px";
+                                        p.placeholder="请输入留言信息";
+                                        p.style.padding="10px";
+                                        p.style.marginLeft="40px";
+                                        p.name="huifu_msg";
+                                        var q=document.createElement("button");
+                                        q.type="button";
+                                        q.setAttribute("class","layui-btn");
+                                        // q.setAttribute("lay-filter","huifu");
+                                        q.innerHTML="发送";
+                                        q.style.marginLeft="200px";
+                                        q.setAttribute("type","submit");
+                                        o.style.display="none";
+                                        var r=document.createElement("button");
+                                        r.setAttribute("class","layui-btn");
+                                        r.type="button";
+                                        r.innerHTML="取消";
+                                        q.onclick=function(){
+            //                                 $.ajax({type:"post",
+            //     url:"http://127.0.0.1:3000/huifu",
+            //     dataType:"JSON",
+            //     data:this.form,
+            //     success:function(result1){
+            //         layer.msg(result1.message)
+            //     },
+            // error:function(err){if(err){alert(JSON.stringify(err))}}})
+                                        }
+                                        // var p=document.createElement("div");
+                                        // p.style.clear="both";
+                                        // f.appendChild(p);
+                                        o.appendChild(p);
+                                        o.appendChild(q);
+                                        o.appendChild(r);
+                                        f.appendChild(o);
+                                        huifu.onclick=function(){
+                                            // window.location.href="#";
+                                            // var re_msg1=document.getElementById("pp");
+                                            // re_msg1.style.display="block";
+                                            // var re_msg2=document.getElementById("user");
+                                            // re_msg2.innerHTML=g1;
+                                            // var huifu_text=document.createElement("div");
+                                            // huifu_text.innerHTML="jdkg";
+                                            // this.parentNode.appendChild(huifu_text);
+                                            this.nextSibling.style.display="block";
+                                        };
+                                        r.onclick=function(){
+                                            this.parentNode.style.display="none";
+                                        }
+                                        liu_yan_message.appendChild(f);
+                                        }                             
+                                    }
+                                }
+                        }
+                    }
+                },
+                error:function(err){
+                    if(err){
+                        alert(err);
+                    }
+                }
+            });
+
+
+            //用户上传，积分制
+            // $.ajax({
+            //     type:"post",
+            //     url:"http://127.0.0.1:3000/jifen",
+            //     dataType:"JSON",
+            //     data:{username:sessionStorage.username},
+            //     success:function(_result){
+                    
+            //     },
+            //     error:function(err){
+            //         if(err){
+            //             alert(JSON.stringify(err));
+            //         }
+            //     }
+            // });
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>采样</title>
+    <link rel="stylesheet" type="text/css" href="../../layui/css/layui.css"/>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background-color: rgb(221, 247, 247);
+        }
+        #header_nav_left img{
+            width:50px;
+            height:50px;
+        }
+        #header_nav_left i{
+            margin:5px;
+        }
+        #header_nav_right i{
+            margin:5px;
+        }
+        #content{
+            margin-top:20px;
+            margin-left:40px;
+            margin-right:40px;
+        }
+        #content h3{
+            margin:20px auto;
+            text-align: center;
+            color:rgb(52, 145, 145);
+        }
+        #content p{
+            color:rgb(102, 109, 109);
+            font-size: 18px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="layui-row">
+        <div class="layui-col-md9">           
+            <ul class="layui-nav" id="header_nav_left">
+                <img class="layui-nav-img" src="../../resource/img/index page/music_logo.png" title="音视网">
+                <li class="layui-nav-item"><a href="../../index.html"><i class="layui-icon layui-icon-home"></i>首页</a></li>
+                <li class="layui-nav-item"><a href="../vedio.html"><i class="layui-icon layui-icon-play"></i>视频教学</a></li>
+                <li class="layui-nav-item"><a href="../audio.html"><i class="layui-icon layui-icon-headset"></i>音频赏析</a></li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">干货资源</a>
+                    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                        <dd><a href="../resource/sample.html">采样包</a></dd>
+                        <dd><a href="../resource/preset.html">合成器预设</a></dd>
+                        <dd><a href="../resource/project.html">工程文件</a></dd>
+                        <dd><a href="../resource/plugin.html">音源插件</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item layui-this"><a href="../article.html"><i class="layui-icon layui-icon-read"></i>必读文章</a></li>
+                <li class="layui-nav-item"><a href="../community.html"><i class="layui-icon layui-icon-group"></i>论坛社区</a></li>
+            </ul>
+        </div>
+        <div class="layui-col-md3">
+            <ul class="layui-nav" id="header_nav_right">
+                <li class="layui-nav-item"><a href="../personal.html"><i class="layui-icon layui-icon-user"></i>个人中心<span class="layui-badge-dot"></span></a></li>
+                <li class="layui-nav-item">
+                    <a href="../personal.html">
+                        <img src="../../resource/img/index page/header_img.jpg" class="layui-nav-img">
+                        <label>我</label>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd>
+                            <a id="_login" href="javascript:;">登录</a>
+                        </dd>
+                        <dd>
+                            <a id="_logon" href="javascript:;">注册</a>
+                        </dd>
+                        <dd>
+                            <a href="#">退出</a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="content" style="background-color: azure;min-height: 400px;">
+        <img width="900px" height="380px" style="position:relative;left:50%;margin-left:-450px;" src="../../resource/img/article page/article4.png"/>
+        <div style="margin:30px;">
+            <h2 style="font-weight: bold;font-family: cursive;">什么是压缩器？如何在混音中使用压缩器？</h2>
+            <p>对于大部分效果器的调节，我们都能得到明显的反馈。如EQ提升高频，声音变明亮了；混响发送量增加，空间感变强了。但是压缩，除了极端调节，大部分新手同学只能能感知到音量大小区别，这也是压缩的难点之一。</p>
+            <p>歌手录歌时，唱得太轻，电平就太小；大声歌唱，电平又太大。压缩器可以将歌手的动态范围减小到可控的水平，这也是压缩器被称为“动态处理器”的原因。</p>
+            <p>电吉他，是另一个很难在整首歌里发挥一致的乐器，任何弹奏失误都可能留下一个“坑”。压缩器也可以让其保持在一个连续的电平。还有很多其它的乐器和声音，某些时候都可以受益于压缩器。</p>
+            <p>所以，压缩器有很多应用。在音量电平失去控制的情况下，压缩器都可以根据你的需要，使它保持在一个合理的范围。</p>
+            <h3>01|主要参数</h3>
+            <p>门限（Threshold）
+                决定压缩器开始工作的起始音量电平。低于这个电平，压缩器不会工作。所以要把门限设置为最低音量以上，在这里压缩器开始工作。</p>
+            <p>压缩比（Ratio）
+
+                设置为1:1时，压缩器不工作；当大于1:1时，压缩器将会按所设定的比例衰减超过阈值部分的音量。如果压缩比调到极端大（如20:1），那便产生了压限器的效果。</p>
+            
+            <p>增益补偿（Make Up）
+
+                压缩后的整体音量会比原来小，所以要用到“输出”或者“增益补偿”旋钮，为的是在动态被压扁后再把音量恢复到合理水平。当然，有些压缩器会有自动增益补偿（auto gain make-up），根据你降低的门限自动补偿它的增益。</p>
+            <p>目前为止，掌握门限（Threshold）、压缩比（Ratio）和增益补偿（make up）这几个主要参数，理论上能满足大部分需求了。</p>
+            <h3>02|拐点、建立/释放时间</h3>
+            <p>许多压缩器都设置了软拐点（soft knee）。当把软拐点打开时，电平到达门限时压缩器不会立即工作，只是纯粹启动；随着电平的增大，压缩比逐渐增大，到达某个电平时，压缩器也达到压缩比（Ratio）所设定的压缩力度。</p>
+            <p>处理一段超出电平范围控制的人声，可以把soft knee打开并设置较大的压缩比，门限调整为可接受的最低电平。当人声超过门限，压缩器会适度压缩；如果人声大到失去控制，那么压缩器就会超大压缩，直到人声听起来舒服。这有点像自动压缩比控制，最大压缩力度是由前面板上的压缩比（Ratio）来决定的。</p>
+            <p>Attack建立时间，用来控制电平音量到达设定门限后多久压缩器工作；Release释放时间，用来控制压缩释放有多快。</p>    
+            <p>如果我们想让过大的电平缓缓降低而不是一变大就立即被压制下来，那就可以尝试调节attack。同样，如果压缩器恢复音量太快，听起来像人为操作，我们就可以用Release释放时间控制压缩器恢复的速度。</p>
+            <p>部分压缩器中，可能还会有“Peak/RMS”（峰值或有效值）这个按钮。“建立”和“释放”是由你要压缩的歌曲决定，但歌曲是不断变化的。“Automatic”（自动）或“Peak/RMS”（峰值/有效值）能为你连续设置正确的启动和释放时间。</p>
+            <h3>03|让声音更有冲击力</h3>
+            <p>通过压缩，我们可以给强节奏音乐增加冲击力。</p>
+            <p>压缩器通常是降低峰值的，除此之外它还能产生惊人的峰值。这种技巧通常用于打击乐器，例如如底鼓、贝斯等。可以通过attack使压缩器以一种缓慢的方式作出反应，让重击信号过冲并产生峰值。</p>
+            <p>先用较慢的release和attack，把门限和压缩比调大。</p>
+            <p>播放电平最小的部分，逐渐调低门限。你应该能找到这样一个点：尽管乐器更安静了，但是输出却有更多冲击力。调整输出增益使其恢复到一个良好的音量。</p>
+            <p>播放歌曲音量最大部分，你会发现，乐器都很安静。降低压缩比，直到音量足够大。</p>
+            <p>再检查歌曲中音量较小的部分。也许它没有那么有力，那你需要把门限降低一些（当然需要把输出增益调大来补偿）。</p>
+            <p>最后，播放一遍，调整attack来得到你需要的冲击力。</p>
+            <p>在这过程中，release的调节值得注意。如果设置太快，会有抽吸效应；反之，如你把release设置太慢，会损失很多冲击力。</p>
+            
+            <h3>04|去除人声齿音</h3>
+            <p>如果人声的齿音太刺耳，但又不想单纯通过EQ来衰减，那压缩器是不错的选择。
+
+                将attack和release调快，压缩比设定在3:1，并挂一个均衡器在侧链上，衰减所有中低频，在3-6KHz区域做提升。</p>
+            <p>这会让压缩器对齿音产生过度反应，此时调整门限便能控制齿音的能量。（侧链上的均衡器不会影响贯穿压缩器声音的频响，侧链控制的声音只是给压缩器听的。）</p>
+            <p>切记不要过度去除齿音，不然容易造成“大舌头”。</p>
+            <p>理解压缩，这是第一步；接下来我们要去训练自己的耳朵，让耳朵能听出压缩前后的区别，这是最重要的，这样才能明白做压缩的真正目的。</p>
+            
+        </div>
+        
+    </div>
+
+
+
+    <div class="layui-row" style="width:100%;height:200px;clear: both;background-color: rgb(7, 7, 56);">
+        <div class="layui-col-md4" style="height:100%">
+            <div style="width:300px;height:180px;margin:10px auto 10px 20px;">
+                <img src="../../resource/img/index page/music_logo.png" width="100px" height="100px" style="border-radius: 25px;">
+                <span><img src="../../resource/img/index page/foot_logo.png"/></span>
+                <div style="color: rgb(116, 114, 108);margin-top:20px;">COPYRIGHT ©2021</div>
+            </div>
+        </div>
+        <div class="layui-col-md6" style="height:100%">
+            <div style="margin-top: 30px;width:100%;height:150px">
+                <div style="width:200px;float:left;height:50px;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">友情链接</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-wechat" style="font-size: 30px;margin:5px;color:rgb(34, 190, 86)"></i>微信</a></li>
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-qq" style="font-size: 30px;margin:5px;color:rgb(44, 226, 226)"></i>QQ</a></li>
+                        </li>
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-weibo" style="font-size: 30px;margin:5px;color:rgb(223, 27, 174)"></i>微博</a></li>
+                        </li>
+                    </ul>
+                </div>
+                <div style="width:200px;float:left;text-align: left;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">关于我们</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li><a href="#">我们的历史</a></li>
+                        <li><a href="#">我们的目的</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div style="width:200px;float:left;text-align: left;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">产品</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li><a href="#">音乐</a></li>
+                        <li><a href="#">软件/插件</a></li>
+                        <li><a href="#">舞台表演</a></li>
+                        <li><a href="#">职业服务</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md2" style="height:100%;">
+            <div style="width:200px;height:150px;margin:25px auto;text-align: center;">
+                <img src="../../resource/img/index page/twofrontcode2.jpg" width="100px" height="100px">
+                <div style="color: rgb(116, 114, 108);margin-top:20px;">扫码加入微信群聊</div>
+            </div>                          
+        </div>
+    </div>
+
+
+
+    <form action="" method="get" class="layui-form">
+        <div id="login" style="display: none;">
+            <h2 style="color:rgb(155, 153, 143);margin:40px auto;text-align: center;font-weight: bold;font-style: oblique;">用户登录</h2>
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <i class="layui-icon layui-icon-username"></i>
+                </label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="username|email" name="" placeholder="请输入用户名或邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <i class="layui-icon layui-icon-password"></i>
+                </label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" name="" placeholder="请输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item"  style="margin-top:40px">
+                <div class="layui-input-block">
+                  <button class="layui-btn layui-btn-radius layui-btn-normal" lay-submit lay-filter="*">登录</button>
+                  <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">重置</button>
+                </div>
+              </div>
+              <div>
+                    <a href="#" id="change_to_logon" style="margin-left:30px">无账号？去注册</a>
+                    <a href="#" style="margin-right:30px;float:right">找回密码</a>
+              </div>
+            
+        </div>
+    </form>
+
+    <form action="" method="get" class="layui-form">
+        <div id="logon" style="display: none;">
+            <h2 style="color:rgb(155, 153, 143);margin:40px auto;text-align: center;font-weight: bold;font-style: oblique;">用户注册</h2>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-username"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="username|email" name="" placeholder="设置用户名或邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" name="" placeholder="设置输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" name="" placeholder="确认输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item"  style="margin-top:40px">
+                <div class="layui-input-block">
+                  <button class="layui-btn layui-btn-radius layui-btn-warm" lay-submit lay-filter="*">注册</button>
+                  <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">重置</button>
+                </div>
+              </div>
+              <div>
+                    <a href="#" id="change_to_login" style="margin-left:30px">已有账号？去登录</a>
+                    <a href="#" style="margin-right:30px;float:right">找回密码</a>
+              </div>
+            
+        </div>
+    </form>
+    
+
+
+
+
+    <script type="text/javascript" src="../../layui/layui.all.js"></script>
+    <script>
+        layui.use(['element','carousel','layer','form'],function(){
+            var element=layui.element,
+            $=layui.$,
+            form=layui.form,
+            layer=layui.layer,
+            carousel=layui.carousel;
+            carousel.render({
+            elem: '#test1'
+            ,width: '100%' //设置容器宽度
+            ,height:'400px'
+            ,arrow: 'always' //始终显示箭头
+            //,anim: 'updown' //切换动画方式
+            });
+            $('#btn1,#_login').on('click',function(){
+                layer.open({
+                    type:1,
+                    title:false,
+                    area:['400px','400px'],
+                    content:$('#login')
+                })
+            });
+            $('#change_to_logon').on('click',function(){
+                layer.closeAll();
+                layer.open({
+                    type:1,
+                    title:false,
+                    area:['400px','400px'],
+                    content:$('#logon')
+                })
+            });
+            $('#btn2,#_logon').on('click',function(){
+                layer.open({
+                    type:1,
+                    title:false,
+                    area:['400px','400px'],
+                    content:$('#logon')
+                })
+            });
+            $('#change_to_login').on('click',function(){
+                layer.closeAll();
+                layer.open({
+                    type:1,
+                    title:false,
+                    area:['400px','400px'],
+                    content:$('#login')
+                })
+            });
+
+        })
+    </script>
+    <!-- <script>
+        function login_btn(){
+            window.location.href="./page/login.html"
+        }
+        function logon_btn(){
+            window.location.href="./page/logon.html"
+        }
+    </script> -->
+</body>
+</html>

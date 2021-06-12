@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音频赏析</title>
+    <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css"/>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background-color: #2f3542;
+        }
+        #header_nav_left img{
+            width:50px;
+            height:50px;
+        }
+        #header_nav_left i{
+            margin:5px;
+        }
+        #header_nav_right i{
+            margin:5px;
+        }
+        #content{
+            margin-top:20px;
+            width:1200px;
+            margin:30px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="layui-row">
+        <div class="layui-col-md9">           
+            <ul class="layui-nav" id="header_nav_left">
+                <img class="layui-nav-img" src="../resource/img/index page/music_logo.png" title="音视网">
+                <li class="layui-nav-item"><a href="../index.html"><i class="layui-icon layui-icon-home"></i>首页</a></li>
+                <li class="layui-nav-item layui-this"><a href="#"><i class="layui-icon layui-icon-play"></i>视频教学</a></li>
+                <li class="layui-nav-item"><a href="audio.html"><i class="layui-icon layui-icon-headset"></i>音频赏析</a></li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">干货资源</a>
+                    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                        <dd><a href="resource/sample.html">采样包</a></dd>
+                        <dd><a href="resource/preset.html">合成器预设</a></dd>
+                        <dd><a href="resource/project.html">工程文件</a></dd>
+                        <dd><a href="resource/plugin.html">音源插件</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="article.html"><i class="layui-icon layui-icon-read"></i>必读文章</a></li>
+                <li class="layui-nav-item"><a href="community.html"><i class="layui-icon layui-icon-group"></i>论坛社区</a></li>
+            </ul>
+        </div>
+        <div class="layui-col-md3">
+            <ul class="layui-nav" id="header_nav_right">
+                <li class="layui-nav-item"><a href="personal.html"><i class="layui-icon layui-icon-user"></i>个人中心<span class="layui-badge-dot"></span></a></li>
+                <li class="layui-nav-item">
+                    <a href="personal.html">
+                        <img src="../resource/img/index page/header_img.jpg" class="layui-nav-img">
+                        <label>我</label>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd>
+                            <a id="_login" href="javascript:;">登录</a>
+                        </dd>
+                        <dd>
+                            <a id="_logon" href="javascript:;">注册</a>
+                        </dd>
+                        <dd>
+                            <a href="../index.html" onclick="out()">退出</a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="content">
+
+        <div>
+            <form class="layui-form" style="float: left;">
+                <i class="layui-icon layui-icon-speaker" style="font-size: 30px;color: #ff6b81;"></i>
+                <span style="color: #ff7f50;font-size:18px;font-weight: bold;font-family:cursive">公告：</span>
+                <label id="gong_gao" style="color:#7bed9f;font-size: 16px;font-weight: bold;"></label>
+            </form>
+            <form class="layui-form" style="float: right;">
+                <div class="layui-form-item">
+                    <div class="layui-input-inline" style="width:240px">
+                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索内容" autocomplete="off" class="layui-input">
+                    
+                    </div>
+                    <button class="layui-btn layui-btn-radius layui-btn-warm layui-anim layui-anim-scale" style="width:80px;" onclick="search()">搜索</button>
+                </div>
+            </form>
+        </div>
+
+        <div style="clear:both"></div>
+        <h2 style="font-family: cursive;color:#f1f2f6">多种典型的音乐风格教学，分享制作大牛的技巧，快来学习吧！</h2>
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+            <ul class="layui-tab-title" style="font-weight: bold;color:gray;">
+                <li class="layui-this">tropical house</li>
+                <li>progressive house</li>
+                <li>melodic house/mid tempo</li>
+                <li>future house</li>
+                <li>deep house</li>
+                <li>slap house/brazilian bass</li>
+                <li>future bass</li>
+                <li>electro house</li>
+            </ul>
+            <div class="layui-tab-content">               
+                <div class="layui-tab-item layui-show">
+                    <div style="width:550px;height:450px;margin:5px;background-color: honeydew;padding-top: 10px;border-radius: 20px;overflow:hidden;float:left">
+                        <h3 style="font-style: italic;color:rgb(61, 60, 60);font-weight: bold;text-align: center;">怎么做Kygo 风格的 TROPICAL HOUSE 附带工程&采样包</h3>
+                        <video controls width="550px" height="300px" style="outline: none;">
+                        <source src="../resource/video/tropical_house1.mp4" type="video/mp4">
+                        </video>
+                        <p style="margin:10px;">
+                        <span style="font-weight: bold;">详细描述：</span>
+                        https://www.youtube.com/watch?v=A1eTT5fLlP8
+                        怎么做Kygo 风格的 TROPICAL HOUSE 附带工程&采样包
+                        工程&采样包链接：https://pan.baidu.com/s/1jJskfUQ 密码：9a0q</p>
+                    </div>
+                    <div style="width:550px;height:450px;margin:5px;background-color: honeydew;padding-top: 10px;border-radius: 20px;overflow:hidden;float:right;">
+                        <h3 style="font-style: italic;color:rgb(61, 60, 60);font-weight: bold;text-align: center;">“土嗨之王”王绎龙教你制作Tropical House热带海滩电音</h3>
+                        <video controls width="550px" height="300px" style="outline: none;">
+                        <source src="../resource/video/tropical_house2.mp4" type="video/mp4">
+                        </video>
+                        <p style="margin:10px;">
+                        <span style="font-weight: bold;">详细描述：</span>
+                        《绎龙电音研究所》是由“绎龙电音厂牌Elong Dance Music”出品的电子音乐知识科普类脱口秀节目。由王绎龙先生担任主持，用轻松闲聊的方式分享王绎龙先生20年来制作电子音乐的经验。</p>
+                    </div>
+                    <div style="width:550px;height:450px;margin:5px;background-color: honeydew;padding-top: 10px;border-radius: 20px;overflow:hidden;float:left">
+                        <h3 style="font-style: italic;color:rgb(61, 60, 60);font-weight: bold;text-align: center;">「工程」Kygo风格Tropical house工程分享 | Namex</h3>
+                        <video controls width="550px" height="300px" style="outline: none;">
+                        <source src="../resource/video/tropical_house3.mp4" type="video/mp4">
+                        </video>
+                        <p style="margin:10px;">
+                        <span style="font-weight: bold;">详细描述：</span>
+                        https://www.youtube.com/watch?v=ti6mU5L6_SQ
+标题：Kygo style | Tropical house [FLP]
+作者：Namex
+工程细节不算很好，有需要的就下吧，请多关注、支持作者Namex
+链接：https://pan.baidu.com/s/1dkMq6pSTAtaAJ41ltUihEg
+提取码：l6ik</p>
+                    </div>
+                    <div style="width:550px;height:450px;margin:5px;background-color: honeydew;padding-top: 10px;border-radius: 20px;overflow:hidden;float:right;">
+                        <h3 style="font-style: italic;color:rgb(61, 60, 60);font-weight: bold;text-align: center;">【教程】如何制作KYGO风格的音乐 附工程</h3>
+                        <video controls width="550px" height="300px" style="outline: none;">
+                        <source src="../resource/video/tropical_house4.mp4" type="video/mp4">
+                        </video>
+                        <p style="margin:10px;">
+                        <span style="font-weight: bold;">详细描述：</span>
+                        https://www.youtube.com/watch?v=xkRJCYVagtQ
+工程文件：https://pan.baidu.com/s/1Is5pHyIFx85irO_1UYGkmA
+提取码 ：c7be</p>
+                    </div>
+                </div>
+
+
+
+                <div class="layui-tab-item">
+                    <div style="width:550px;height:450px;margin:5px;background-color: honeydew;padding-top: 10px;border-radius: 20px;overflow:hidden;float:left">
+                        <h3 style="font-style: italic;color:rgb(61, 60, 60);font-weight: bold;text-align: center;">【电音制作教程】如何在3分钟内制作A神Avicii风格的Progressive House？</h3>
+                        <video controls width="550px" height="300px" style="outline: none;">
+                        <source src="../resource/video/progressive_house1.mp4" type="video/mp4">
+                        </video>
+                        <p style="margin:10px;">
+                        <span style="font-weight: bold;">详细描述：</span>
+                        https://www.youtube.com/watch?v=ZOnp_ZIHMxc
+原作者：OSHEEN
+各位Pro House Producers, this's for u guys:D</p>
+                    </div>
+                    <div style="width:550px;height:450px;margin:5px;background-color: honeydew;padding-top: 10px;border-radius: 20px;overflow:hidden;float:right;">
+                        <h3 style="font-style: italic;color:rgb(61, 60, 60);font-weight: bold;text-align: center;">【fl studio】2分钟制作小马丁Martin Garrix风格的Progressive house</h3>
+                        <video controls width="550px" height="300px" style="outline: none;">
+                        <source src="../resource/video/progressive_house2.mp4" type="video/mp4">
+                        </video>
+                        <p style="margin:10px;">
+                        <span style="font-weight: bold;">详细描述：</span>
+                        https://www.youtube.com/watch?v=N2W4a1IRk7U
+挺适合新萌的
+交流群3417664</p>
+                    </div>
+                    <div style="width:550px;height:450px;margin:5px;background-color: honeydew;padding-top: 10px;border-radius: 20px;overflow:hidden;float:left">
+                        <h3 style="font-style: italic;color:rgb(61, 60, 60);font-weight: bold;text-align: center;">如何像MARTIN GARRIX 一样制作progressive house风格的音乐</h3>
+                        <video controls width="550px" height="300px" style="outline: none;">
+                        <source src="../resource/video/progressive_house3.mp4" type="video/mp4">
+                        </video>
+                        <p style="margin:10px;">
+                        <span style="font-weight: bold;">详细描述：</span>
+                        转自YouTube
+如何像MARTIN GARRIX 一样制作progressive house风格的音乐-FL STUDIO教程</p>
+                    </div>
+                    <div style="width:550px;height:450px;margin:5px;background-color: honeydew;padding-top: 10px;border-radius: 20px;overflow:hidden;float:right">
+                        <h3 style="font-style: italic;color:rgb(61, 60, 60);font-weight: bold;text-align: center;">怎么做一个夏天清凉风格的progressive house（A神风格哦）</h3>
+                        <video controls width="550px" height="300px" style="outline: none;">
+                        <source src="../resource/video/progressive_house4.mp4" type="video/mp4">
+                        </video>
+                        <p style="margin:10px;">
+                        <span style="font-weight: bold;">详细描述：</span>
+                        https://www.youtube.com/watch?v=USomyNXrhoc
+好东西</p>
+                    </div>
+                </div>
+
+
+                <div class="layui-tab-item">
+                    <div style="width:550px;height:450px;margin:5px;background-color: honeydew;padding-top: 10px;border-radius: 20px;overflow:hidden;float:left">
+                        <h3 style="font-style: italic;color:rgb(61, 60, 60);font-weight: bold;text-align: center;">五分钟把《出山(Super Love)》改编成Alan Walker风格的电音</h3>
+                        <video controls width="550px" height="300px" style="outline: none;">
+                        <source src="../resource/video/melodic_house1.mp4" type="video/mp4">
+                        </video>
+                        <p style="margin:10px;">
+                        <span style="font-weight: bold;">详细描述：</span>
+                        自制，花了两小时随便写的，工程请见评论区。原曲：Super Love，制作人：Bachbeats
+有些参考了Youtube的UP主Memphy，人声来自av44555568，混音比较渣Orz
+版权更新：刚才Bachbeats国内代理公司已经联系到我了，已按照要求标注署名。视频提到无法购买的原因在cv2238685。希望大家增强版权意识。
+2p上传了去人声的纯音乐版本，同时音频也上传了我的B站空间和网易云电台。欢迎大家也来我的网易云玩耍啊@SKa2orMusic，也欢迎大家给出意见或建议。</p>
+                    </div>
+                    <div style="width:550px;height:450px;margin:5px;background-color: honeydew;padding-top: 10px;border-radius: 20px;overflow:hidden;float:right;">
+                        <h3 style="font-style: italic;color:rgb(61, 60, 60);font-weight: bold;text-align: center;">看我把《Dance Monkey》改编成AlanWalker风格的电音</h3>
+                        <video controls width="550px" height="300px" style="outline: none;">
+                        <source src="../resource/video/melodic_house2.mp4" type="video/mp4">
+                        </video>
+                        <p style="margin:10px;">
+                        <span style="font-weight: bold;">详细描述：</span>
+                        原曲：Toni Watson - Dance Monkey
+视频素材：Alan Walker - Alone (Live Performance）https://youtu.be/Q9uat3ticA8</p>
+                    </div>
+                    <div style="width:550px;height:450px;margin:5px;background-color: honeydew;padding-top: 10px;border-radius: 20px;overflow:hidden;float:left">
+                        <h3 style="font-style: italic;color:rgb(61, 60, 60);font-weight: bold;text-align: center;">如何制作Alan Walker的风格(中文字幕)</h3>
+                        <video controls width="550px" height="300px" style="outline: none;">
+                        <source src="../resource/video/melodic_house3.mp4" type="video/mp4">
+                        </video>
+                        <p style="margin:10px;">
+                        <span style="font-weight: bold;">详细描述：</span>
+                        https://www.youtube.com/watch?v=HtD1a1Ki4VQ
+Get the FREE Alan Walker FLP here: https://hypeddit.com/track/f1iu59</p>
+                    </div>
+                    <div style="width:550px;height:450px;margin:5px;background-color: honeydew;padding-top: 10px;border-radius: 20px;overflow:hidden;float:right">
+                        <h3 style="font-style: italic;color:rgb(61, 60, 60);font-weight: bold;text-align: center;">【中文字幕】K-391教你如何制作Future Bass的音乐风格</h3>
+                        <video controls width="550px" height="300px" style="outline: none;">
+                        <source src="../resource/video/melodic_house4.mp4" type="video/mp4">
+                        </video>
+                        <p style="margin:10px;">
+                        <span style="font-weight: bold;">详细描述：</span>
+                        https://youtu.be/XtGl49BG0bo
+嗨！K-391的如何制作又来啦！这次391教大家如何制作Future Bass的音乐风格，看完你学会了吗？（不会~）
+原作者：K-391
+原标题：K-391 - How To Make_ A Future Bass Song (Feat. Linko)</p>
+                    </div>
+                </div>
+
+                <div class="layui-tab-item">
+                    <div style="width:550px;height:450px;margin:5px;background-color: honeydew;padding-top: 10px;border-radius: 20px;overflow:hidden;float:left">
+                        <h3 style="font-style: italic;color:rgb(61, 60, 60);font-weight: bold;text-align: center;">【学不学得会第1期】Mike Williams风格的Future Bounce_你能学会吗</h3>
+                        <video controls width="550px" height="300px" style="outline: none;">
+                        <source src="../resource/video/future_house1.mp4" type="video/mp4">
+                        </video>
+                        <p style="margin:10px;">
+                        <span style="font-weight: bold;">详细描述：</span>
+                        感谢各位电音爱好者长久以来对PB的支持！
+我们会在11月22日，11月29日以及12月6日分别重新投稿【学不学得会】的三期非互动视频版本！如果三期播放量视频均过万，我们会在12月底之前重启【学不学得会】系列教学视频哟～</p>
+                    </div>
+                    <div style="width:550px;height:450px;margin:5px;background-color: honeydew;padding-top: 10px;border-radius: 20px;overflow:hidden;float:right;">
+                        <h3 style="font-style: italic;color:rgb(61, 60, 60);font-weight: bold;text-align: center;">怎么制作一首future bounce</h3>
+                        <video controls width="550px" height="300px" style="outline: none;">
+                        <source src="../resource/video/future_house2.mp4" type="video/mp4">
+                        </video>
+                        <p style="margin:10px;">
+                        <span style="font-weight: bold;">详细描述：</span>
+                        https://www.youtube.com/watch?v=kkzItpzMyGw
+欢迎加入电子音乐交流群：946707797（最新采样.预置.插件分享）
+需要什么风格教程麻烦留言或者私聊</p>
+                    </div>
+                    <div style="width:550px;height:450px;margin:5px;background-color: honeydew;padding-top: 10px;border-radius: 20px;overflow:hidden;float:left">
+                        <h3 style="font-style: italic;color:rgb(61, 60, 60);font-weight: bold;text-align: center;">如何制作像脏爪(Dirty Palm)一样的Future Bounce</h3>
+                        <video controls width="550px" height="300px" style="outline: none;">
+                        <source src="../resource/video/future_house3.mp4" type="video/mp4">
+                        </video>
+                        <p style="margin:10px;">
+                        <span style="font-weight: bold;">详细描述：</span>
+                        https://www.youtube.com/watch?v=b_IhJ6sPpDM
+
+FLP:https://pumpyoursound.com/fangate/detail/58135-oblivion-zephry-remake-flp
+
+另外脏爪是窝很喜欢的一个Bounce制作人(虽然这个教程不太好吧)他的风格并没有只停留在Future Bounce，希望大家可以去了解下他</p>
+                    </div>
+                    <div style="width:550px;height:450px;margin:5px;background-color: honeydew;padding-top: 10px;border-radius: 20px;overflow:hidden;float:right">
+                        <h3 style="font-style: italic;color:rgb(61, 60, 60);font-weight: bold;text-align: center;">如何让FUTURE Bounce的旋律好听又商业</h3>
+                        <video controls width="550px" height="300px" style="outline: none;">
+                        <source src="../resource/video/future_house4.mp4" type="video/mp4">
+                        </video>
+                        <p style="margin:10px;">
+                        <span style="font-weight: bold;">详细描述：</span>
+                        网易云ID：HeartBlue心蓝
+第一次做视频，多多包涵
+后面会出更加详细的不同风格的作品视频和教学</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="layui-row" style="width:100%;height:200px;background-color: rgb(7, 7, 56);clear: both;">
+        <div class="layui-col-md4" style="height:100%">
+            <div style="width:300px;height:180px;margin:10px auto 10px 20px;">
+                <img src="../resource/img/index page/music_logo.png" width="100px" height="100px" style="border-radius: 25px;">
+                <span><img src="../resource/img/index page/foot_logo.png"/></span>
+                <div style="color: rgb(116, 114, 108);margin-top:20px;">COPYRIGHT ©2021</div>
+            </div>
+        </div>
+        <div class="layui-col-md6" style="height:100%">
+            <div style="margin-top: 30px;width:100%;height:150px">
+                <div style="width:200px;float:left;height:50px;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">友情链接</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-wechat" style="font-size: 30px;margin:5px;color:rgb(34, 190, 86)"></i>微信</a></li>
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-qq" style="font-size: 30px;margin:5px;color:rgb(44, 226, 226)"></i>QQ</a></li>
+                        </li>
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-weibo" style="font-size: 30px;margin:5px;color:rgb(223, 27, 174)"></i>微博</a></li>
+                        </li>
+                    </ul>
+                </div>
+                <div style="width:200px;float:left;text-align: left;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">关于我们</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li><a href="#">我们的历史</a></li>
+                        <li><a href="#">我们的目的</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div style="width:200px;float:left;text-align: left;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">产品</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li><a href="#">音乐</a></li>
+                        <li><a href="#">软件/插件</a></li>
+                        <li><a href="#">舞台表演</a></li>
+                        <li><a href="#">职业服务</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md2" style="height:100%;">
+            <div style="width:200px;height:150px;margin:25px auto;text-align: center;">
+                <img src="../resource/img/index page/twofrontcode2.jpg" width="100px" height="100px">
+                <div style="color: rgb(116, 114, 108);margin-top:20px;">扫码加入微信群聊</div>
+            </div>                          
+        </div>
+    </div>
+
+
+    <form action="" method="get" class="layui-form">
+        <div id="login" style="display: none;">
+            <h2 style="color:rgb(155, 153, 143);margin:40px auto;text-align: center;font-weight: bold;font-style: oblique;">用户登录</h2>
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <i class="layui-icon layui-icon-username"></i>
+                </label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="username" name="user_name" placeholder="请输入用户名或邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <i class="layui-icon layui-icon-password"></i>
+                </label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item"  style="margin-top:40px">
+                <div class="layui-input-block">
+                  <button class="layui-btn layui-btn-radius layui-btn-normal" lay-submit lay-filter="dl">登录</button>
+                  <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">重置</button>
+                </div>
+              </div>
+              <div>
+                    <a href="#" id="change_to_logon" style="margin-left:30px">无账号？去注册</a>
+                    <a href="#" style="margin-right:30px;float:right">找回密码</a>
+              </div>
+            
+        </div>
+    </form>
+
+    <form action="" method="get" class="layui-form">
+        <div id="logon" style="display: none;">
+            <h2 style="color:rgb(155, 153, 143);margin:40px auto;text-align: center;font-weight: bold;font-style: oblique;">用户注册</h2>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-username"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="username" name="user_name" placeholder="设置用户名或邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" name="password" placeholder="设置输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+                <div class="layui-input-block">
+                    <label class="layui-form-label"><i class="layui-icon layui-icon-release"></i></label>
+                    <input type="text" lay-verify="email" required="required" name="email" placeholder="设置邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item"  style="margin-top:40px">
+                <div class="layui-input-block">
+                  <button class="layui-btn layui-btn-radius layui-btn-warm" lay-submit lay-filter="zc">注册</button>
+                  <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">重置</button>
+                </div>
+              </div>
+              <div>
+                    <a href="#" id="change_to_login" style="margin-left:30px">已有账号？去登录</a>
+                    <a href="#" style="margin-right:30px;float:right">找回密码</a>
+              </div>
+            
+        </div>
+    </form>
+
+
+
+    <script type="text/javascript" src="../layui/layui.all.js"></script>
+    <script type="text/javascript" src="../echarts.min.js"></script>
+    <script type="text/javascript" src="../vue.min.js"></script>
+    <script type="text/javascript" src="../js/form.js"></script>
+    <script type="text/javascript" src="../js/search.js"></script>
+    
+    <!-- <script>
+        function login_btn(){
+            window.location.href="./page/login.html"
+        }
+        function logon_btn(){
+            window.location.href="./page/logon.html"
+        }
+    </script> -->
+</body>
+</html>

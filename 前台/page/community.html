@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社区中心</title>
+    <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css"/>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background-color: #2f3542;
+        }
+        #header_nav_left img{
+            width:50px;
+            height:50px;
+        }
+        #header_nav_left i{
+            margin:5px;
+        }
+        #header_nav_right i{
+            margin:5px;
+        }
+        #content{
+            margin-top:20px;
+            width:1200px;
+            margin:30px auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="layui-row">
+        <div class="layui-col-md9">           
+            <ul class="layui-nav" id="header_nav_left">
+                <img class="layui-nav-img" src="../resource/img/index page/music_logo.png" title="音视网">
+                <li class="layui-nav-item"><a href="../index.html"><i class="layui-icon layui-icon-home"></i>首页</a></li>
+                <li class="layui-nav-item"><a href="vedio.html"><i class="layui-icon layui-icon-play"></i>视频教学</a></li>
+                <li class="layui-nav-item"><a href="audio.html"><i class="layui-icon layui-icon-headset"></i>音频赏析</a></li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">干货资源</a>
+                    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                        <dd><a href="resource/sample.html">采样包</a></dd>
+                        <dd><a href="resource/preset.html">合成器预设</a></dd>
+                        <dd><a href="resource/project.html">工程文件</a></dd>
+                        <dd><a href="resource/plugin.html">音源插件</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="article.html"><i class="layui-icon layui-icon-read"></i>必读文章</a></li>
+                <li class="layui-nav-item layui-this"><a href="#"><i class="layui-icon layui-icon-group"></i>论坛社区</a></li>
+            </ul>
+        </div>
+        <div class="layui-col-md3">
+            <ul class="layui-nav" id="header_nav_right">
+                <li class="layui-nav-item"><a href="personal.html"><i class="layui-icon layui-icon-user"></i>个人中心<span class="layui-badge-dot"></span></a></li>
+                <li class="layui-nav-item">
+                    <a href="personal.html">
+                        <img src="../resource/img/index page/header_img.jpg" class="layui-nav-img">
+                        <label>我</label>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd>
+                            <a id="_login" href="javascript:;">登录</a>
+                        </dd>
+                        <dd>
+                            <a id="_logon" href="javascript:;">注册</a>
+                        </dd>
+                        <dd>
+                            <a href="../index.html" onclick="out()">退出</a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="content">
+        <div>
+            <form class="layui-form" style="float: left;">
+                <i class="layui-icon layui-icon-speaker" style="font-size: 30px;color: #ff6b81;"></i>
+                <span style="color: #ff7f50;font-size:18px;font-weight: bold;font-family:cursive">公告：</span>
+                <label id="gong_gao" style="color:#7bed9f;font-size: 16px;font-weight: bold;"></label>
+            </form>
+            <form class="layui-form" style="float: right;">
+                <div class="layui-form-item">
+                    <div class="layui-input-inline" style="width:240px">
+                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索内容" autocomplete="off" class="layui-input">
+                    
+                    </div>
+                    <button class="layui-btn layui-btn-radius layui-btn-warm layui-anim layui-anim-scale" style="width:80px;" onclick="search()">搜索</button>
+                </div>
+            </form>
+        </div>
+            <hr class="layui-bg-green">
+            <div>
+                <img src="../resource/img/community page/header.PNG" width="1200px" height="380px" style="border-radius: 25px;"/>
+            </div>
+            <hr class="layui-bg-orange">
+            <div style="width:1150px;height:50px;background-color: #ffffff;border-radius: 25px;padding-top:20px;padding-left:50px;font-weight: bold;">想说什么都可以哦ヾ(=･ω･=)o</div>
+            <h3 style="margin:20px 10px;color:#ffffff">评论</h3>
+            <div style="width:1200px;background-color: #f1f2f6;min-height: 400px;">
+                <form class="layui-form" method="post" action="" style="background-color: #dfe4ea;height:200px">
+                    <div class="layui-form-item" style="text-align: center;">
+                        <textarea id="tt" name="desc" placeholder="请输入内容" style="width:800px;height:100px;border-style: none;margin-left:50px;padding-top:10px;padding-left:20px;margin-top: 20px;"></textarea>
+                    </div>
+                    <div class="layui-form-item">
+                        <button style="margin-left:500px;" class="layui-btn layui-btn-radius layui-btn-normal" lay-submit lay-filter="liuyan">发表</button>
+                    <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">取消</button>
+                    </div>
+                </form>
+
+                <div id="message">
+
+                </div>
+            </div>
+    </div>
+
+
+
+    <div class="layui-row" style="width:100%;height:200px;background-color: rgb(7, 7, 56);clear: both;">
+        <div class="layui-col-md4" style="height:100%">
+            <div style="width:300px;height:180px;margin:10px auto 10px 20px;">
+                <img src="../resource/img/index page/music_logo.png" width="100px" height="100px" style="border-radius: 25px;">
+                <span><img src="../resource/img/index page/foot_logo.png"/></span>
+                <div style="color: rgb(116, 114, 108);margin-top:20px;">COPYRIGHT ©2021</div>
+            </div>
+        </div>
+        <div class="layui-col-md6" style="height:100%">
+            <div style="margin-top: 30px;width:100%;height:150px">
+                <div style="width:200px;float:left;height:50px;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">友情链接</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-wechat" style="font-size: 30px;margin:5px;color:rgb(34, 190, 86)"></i>微信</a></li>
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-qq" style="font-size: 30px;margin:5px;color:rgb(44, 226, 226)"></i>QQ</a></li>
+                        </li>
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-weibo" style="font-size: 30px;margin:5px;color:rgb(223, 27, 174)"></i>微博</a></li>
+                        </li>
+                    </ul>
+                </div>
+                <div style="width:200px;float:left;text-align: left;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">关于我们</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li><a href="#">我们的历史</a></li>
+                        <li><a href="#">我们的目的</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div style="width:200px;float:left;text-align: left;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">产品</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li><a href="#">音乐</a></li>
+                        <li><a href="#">软件/插件</a></li>
+                        <li><a href="#">舞台表演</a></li>
+                        <li><a href="#">职业服务</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md2" style="height:100%;">
+            <div style="width:200px;height:150px;margin:25px auto;text-align: center;">
+                <img src="../resource/img/index page/twofrontcode2.jpg" width="100px" height="100px">
+                <div style="color: rgb(116, 114, 108);margin-top:20px;">扫码加入微信群聊</div>
+            </div>                          
+        </div>
+    </div>
+
+
+    <form action="" method="get" class="layui-form">
+        <div id="login" style="display: none;">
+            <h2 style="color:rgb(155, 153, 143);margin:40px auto;text-align: center;font-weight: bold;font-style: oblique;">用户登录</h2>
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <i class="layui-icon layui-icon-username"></i>
+                </label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="username" name="user_name" placeholder="请输入用户名或邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <i class="layui-icon layui-icon-password"></i>
+                </label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item"  style="margin-top:40px">
+                <div class="layui-input-block">
+                  <button class="layui-btn layui-btn-radius layui-btn-normal" lay-submit lay-filter="dl">登录</button>
+                  <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">重置</button>
+                </div>
+              </div>
+              <div>
+                    <a href="#" id="change_to_logon" style="margin-left:30px">无账号？去注册</a>
+                    <a href="#" style="margin-right:30px;float:right">找回密码</a>
+              </div>
+            
+        </div>
+    </form>
+
+    <form action="" method="get" class="layui-form">
+        <div id="logon" style="display: none;">
+            <h2 style="color:rgb(155, 153, 143);margin:40px auto;text-align: center;font-weight: bold;font-style: oblique;">用户注册</h2>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-username"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="username" name="user_name" placeholder="设置用户名或邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" name="password" placeholder="设置输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-release"></i></label>
+                <div class="layui-input-block">
+                    <input type="text" lay-verify="email" required="required" name="email" placeholder="设置邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item"  style="margin-top:40px">
+                <div class="layui-input-block">
+                  <button class="layui-btn layui-btn-radius layui-btn-warm" lay-submit lay-filter="zc">注册</button>
+                  <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">重置</button>
+                </div>
+              </div>
+              <div>
+                    <a href="#" id="change_to_login" style="margin-left:30px">已有账号？去登录</a>
+                    <a href="#" style="margin-right:30px;float:right">找回密码</a>
+              </div>
+            
+        </div>
+    </form>
+
+
+
+    <script type="text/javascript" src="../layui/layui.all.js"></script>
+    <script type="text/javascript" src="../echarts.min.js"></script>
+    <script type="text/javascript" src="../vue.min.js"></script>
+    <script type="text/javascript" src="../js/form.js"></script>
+    <script>
+        var username=sessionStorage.username;
+        var time=new Date();
+        var my_time1=time.getFullYear();
+        var my_time2=time.getMonth();
+        var my_time3=time.getDay();
+        var my_time=my_time1+"年"+my_time2+"月"+my_time3+"日";
+        var like=0;
+        console.log(my_time);
+        layui.use(['form','layer'],function(){
+            var $=layui.$,
+            form=layui.form,
+            layer=layui.layer;
+            form.on('submit(liuyan)',function(data){
+                if(sessionStorage.username==null||sessionStorage.username==undefined){
+                    layer.msg("请先登录后留言");
+                }
+                else{
+                    var ttt=document.getElementById("tt").value;
+                    if(ttt==""||ttt==null){
+                        layer.msg("不能发送空信息哦");
+                    }
+                    else{
+                        $.ajax({
+                    type:"post",url:"http://127.0.0.1:3000/message",dataType:"JSON",data:{text:data.field.desc,username:username,time:my_time,like:like},success:function(result){
+                        if(result.code==1100){
+                            layer.msg("已发送");
+                            // document.getElementsByName("desc").text="";
+                        }
+                    },
+                    error:function(err){
+                        if(err){layer.msg("服务器出错啦")}
+                    }
+                });
+                    }
+                }
+                
+                return false;
+            });
+        });
+         // 所有留言信息
+        $.ajax({
+                type:"post",
+                url:"http://127.0.0.1:3000/all_message",
+                dataType:"JSON",
+                //data:{username:sessionStorage.username},
+                success:function(result1){
+                    if(result1.code==1200){
+                        console.log(result1.message);
+                        var item=document.getElementById("message");
+                            var message=document.createElement("div");
+                            message.style.width="1100px";
+                            message.style.height="80px";
+                            message.style.backgroundColor="#ffffff";
+                            message.style.margin="10px auto";
+                            message.innerHTML=result1.message;
+                    }
+                    else if(result1.code==1300){
+                        console.log(result1);
+                        for(var i=0;i<result1.data.data1.length;i++){
+                            var item=document.getElementById("message");
+                            var message=document.createElement("div");
+                            message.style.width="1100px";
+                            message.style.height="80px";
+                            message.style.backgroundColor="#ffffff";
+                            message.style.margin="10px auto";
+                            var a=document.createElement("span");
+                            a.innerHTML=result1.data.data1[i].user_name;
+                            a.style.marginLeft="20px";
+                            a.style.lineHeight="80px";
+                            a.style.float="left";
+                            var b=document.createElement("span");
+                            b.innerHTML="用户留言："+result1.data.data1[i].text;
+                            b.style.float="left";
+                            b.style.marginLeft="50px";
+                            b.style.lineHeight="80px";
+                            var c=document.createElement("span");
+                            c.innerHTML="留言时间："+result1.data.data1[i].time;
+                            c.style.float="right";
+                            c.style.marginRight="40px";
+                            c.style.lineHeight="80px";
+                            var d=document.createElement("span");
+                            d.innerHTML='<i class="layui-icon layui-icon-praise" style="font-size:20px"></i>';
+                            d.style.float="right";
+                            d.style.lineHeight="80px";
+                            d.style.marginRight="5px";
+                            var e=document.createElement("span");
+                            e.innerHTML=result1.data.data1[i]._like;
+                            e.style.float="right";
+                            e.style.lineHeight="80px";
+                            e.style.marginRight="200px";
+                            //var f=document.createElement("span"); 
+                            // var g=document.createElement("span");
+                            message.appendChild(a);
+                            message.appendChild(b);
+                            message.appendChild(e);
+                            message.appendChild(d);
+                            message.appendChild(c);
+                            item.appendChild(message);
+                            if(sessionStorage.username!=null){
+                                if(sessionStorage.username!=result1.data.data1[i].user_name){
+                                    var f=document.createElement("button");
+                                    f.type="button";
+                                    f.setAttribute("class","layui-btn layui-btn-normal");
+                                    // f.setAttribute("lay-filter","huifu");
+                                    f.innerHTML="评论";
+                                    f.style.position="absolute";
+                                    f.style.right="200px";
+                                    f.style.marginTop="20px";
+                                    message.appendChild(f);
+                                    var g=document.createElement("div");
+                                    g.style.width="1000px";
+                                    g.style.height="200px";
+                                    g.style.backgroundColor="#ffffff";
+                                    g.style.margin="auto";
+                                    g.style.display="none";
+                                    var aa=document.createElement("form");
+                                    aa.setAttribute("class","layui-form");
+                                    var bb=document.createElement("div");
+                                    bb.setAttribute("class","layui-form-item");
+                                    aa.appendChild(bb);
+                                    var cc=document.createElement("span");
+                                    cc.innerHTML="给用户："+result1.data.data1[i].user_name+"-留言";
+                                    var dd=document.createElement("textarea");
+                                    dd.setAttribute("class","layui-textarea");
+                                    dd.placeholder="请输入留言信息";
+                                    dd.name="text";
+                                    var ee=document.createElement("button");
+                                    ee.setAttribute("class","layui-btn");
+                                    ee.innerHTML="发送";
+                                    ee.type="submit";
+                                    ee.style.width="300px";
+                                    ee.style.marginLeft="300px";
+                                    bb.appendChild(cc);
+                                    bb.appendChild(dd);
+                                    bb.appendChild(ee);
+                                    g.appendChild(aa);
+                                    message.appendChild(g);
+                                    f.onclick=function(){
+                                        this.nextSibling.style.display="block";
+                                    }
+                                }
+                            }
+                            var re=result1.data.data2.length;
+                            for(var j=0;j<re;j++){
+                                if(result1.data.data2[j].reply_for_id==result1.data.data1[i].message_id){
+                                    var h=document.createElement("div");
+                                    h.style.width="1000px";
+                                    h.style.minHeight="80px";
+                                    h.style.backgroundColor="#ffffff";
+                                    h.style.marginLeft="150px";
+                                    h.style.marginBottom="5px";
+                                    var l=document.createElement("span");
+                                    l.innerHTML=result1.data.data2[j].reply_username;
+                                    l.style.position="absolute";
+                                    l.style.lineHeight="80px";
+                                    l.style.marginLeft="10px";
+                                    var m=document.createElement("span");
+                                    m.innerHTML="用户评论："+result1.data.data2[j].reply_text;
+                                    m.style.position="absolute";
+                                    m.style.left="350px";
+                                    m.style.lineHeight="80px";
+                                    var n=document.createElement("span");
+                                    n.innerHTML="评论时间："+result1.data.data2[j].reply_time;
+                                    n.style.position="absolute";
+                                    n.style.left="700px";
+                                    n.style.lineHeight="80px";
+                                    var p=document.createElement("span");
+                                    p.innerHTML='<i class="layui-icon layui-icon-praise" style="font-size:20px"></i>';
+                                    p.style.position="absolute";
+                                    p.style.right="300px";
+                                    p.style.lineHeight="80px";
+                                    var q=document.createElement("span");
+                                    q.innerHTML=result1.data.data2[j].reply_like;
+                                    q.style.position="absolute";
+                                    q.style.right="280px";
+                                    q.style.lineHeight="80px";
+                                    h.appendChild(l);
+                                    h.appendChild(m);
+                                    h.appendChild(n);
+                                    h.appendChild(p);
+                                    h.appendChild(q);
+                                    item.appendChild(h);
+                                    if(sessionStorage.username!=result1.data.data2[j].reply_username){
+                                        var r=document.createElement("button");
+                                        r.type="button";
+                                        r.innerHTML="评论";
+                                        r.setAttribute("class","layui-btn layui-btn-normal");
+                                        r.style.position="absolute";
+                                        r.style.right="150px";
+                                        r.style.marginTop="20px";
+                                        r.style.clear="both";
+                                        r.onclick=function(){
+                                            this.nextSibling.style.display="block";
+                                        }
+                                        h.appendChild(r);
+                                        var aaa=document.createElement("div");
+                                        aaa.style.display="none";
+                                        aaa.style.top="5px";
+                                        aaa.style.height="300px";
+                                        //aaa.style.display="none";
+                                        var bbb=document.createElement("form");
+                                        bbb.setAttribute("class","layui-form");
+                                        bbb.style.width="600px";
+                                        bbb.style.height="200px";
+                                        bbb.style.position="relative";
+                                        bbb.style.top="80px";
+                                        bbb.style.margin="auto";
+                                        var ccc=document.createElement("div");
+                                        ccc.innerHTML="给用户："+result1.data.data2[j].reply_username+" 留言";
+                                        var ddd=document.createElement("div");
+                                        ddd.setAttribute("class","div");
+                                        var eee=document.createElement("textarea");
+                                        eee.setAttribute("class","layui-textarea");
+                                        eee.setAttribute("id","gg");
+                                        // eee.name="tx";
+                                        var btn1=document.createElement("button");
+                                        btn1.setAttribute("class","layui-btn");
+                                        // btn1.setAttribute("lay-filter","p_huifu")
+                                        b.type="button";
+                                        btn1.innerHTML="发送";
+                                        btn1.style.marginLeft="200px";
+                                        var btn2=document.createElement("button");
+                                        btn2.setAttribute("class","layui-btn");
+                                        btn2.type="button";
+                                        btn2.innerHTML="取消";
+                                        //获取索引
+                                        var rep_id=result1.data.data1[j].message_id;
+                                        btn1.onclick=function(){
+                                            alert(rep_id);
+                                            if(username==null){
+                                                alert("请先登录后再评论");
+                                            }
+                                            else{
+                                                var abc=document.getElementById("gg");
+                                                if(abc.value==null||abc.value==""){
+                                                    alert("评论信息不能为空哦");
+                                                }
+                                                else{
+                                                    $.ajax({
+                                                    type:"post",url:"http://127.0.0.1:3000/huifu",dataType:"JSON",
+                                                    data:{r_text:abc.value,r_username:username,r_time:my_time,r_like:like,r_id:rep_id},
+                                                    success:function(r_result){
+                                                        console.log(data);
+                                                        if(r_result.code==1400){
+                                                            alert("发送成功");
+                                                            
+                                                        }
+                                                    },
+                                                    error:function(err){
+                                                        if(err){alert("服务器开小差了")}
+                                                    }
+                                                    })
+                                                }
+                                            }
+                                        }
+            //                             btn1.onclick=function(){
+            //                                 layui.user(['form','layer','element'],function(){
+            //                                     var $=layui.$,
+            //                                     element=layui.element,
+            //                                     form=layui.form,
+            //                                     layer=layui.layer;
+            //                                     form.on('submit(p_huifu)',function(r_data){
+            //     if(sessionStorage.username==null){
+            //         layer.msg("请先登录后留言");
+            //     }
+            //     else{
+            //         var ggg=document.getElementById("gg").value;
+            //         if(ggg==""||ggg==null){
+            //             layer.msg("不能发送空信息哦");
+            //         }
+            //         else{
+            //             $.ajax({
+            //             type:"post",url:"http://127.0.0.1:3000/huifu",dataType:"JSON",data:{text:r_data.field.tx,username:username,time:my_time,like:like},success:function(r_result){
+            //             if(r_result.code==1400){
+            //                 layer.msg("已发送");
+            //                 // document.getElementsByName("desc").text="";
+            //             }
+            //             },
+            //             error:function(err){
+            //                 if(err){layer.msg("服务器出错啦")}
+            //             }
+            //             });
+            //         }
+            //     }
+                
+            //     return false;
+            // });
+            //                                 })
+            //                             }
+                                        btn2.onclick=function(){
+                                            this.parentNode.parentNode.style.display="none";
+                                        }
+                                        bbb.appendChild(ccc);
+                                        ccc.appendChild(ddd);
+                                        ddd.appendChild(eee);
+                                        bbb.appendChild(btn1);
+                                        bbb.appendChild(btn2);
+                                        aaa.appendChild(bbb);
+                                        h.appendChild(aaa);
+                                        //事件处理
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                error:function(err){
+                    if(err){
+                        alert("服务器开小差了哦");
+                    }
+                }
+            });
+    </script>
+    <script type="text/javascript" src="../js/search.js"></script>
+    <!-- <script>
+        function login_btn(){
+            window.location.href="./page/login.html"
+        }
+        function logon_btn(){
+            window.location.href="./page/logon.html"
+        }
+    </script> -->
+</body>
+</html>

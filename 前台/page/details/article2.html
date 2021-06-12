@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>采样</title>
+    <link rel="stylesheet" type="text/css" href="../../layui/css/layui.css"/>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background-color: rgb(221, 247, 247);
+        }
+        #header_nav_left img{
+            width:50px;
+            height:50px;
+        }
+        #header_nav_left i{
+            margin:5px;
+        }
+        #header_nav_right i{
+            margin:5px;
+        }
+        #content{
+            margin-top:20px;
+            margin-left:40px;
+            margin-right:40px;
+        }
+        #content h3{
+            margin:20px auto;
+            text-align: center;
+            color:rgb(52, 145, 145);
+        }
+        #content p{
+            color:rgb(102, 109, 109);
+            font-size: 18px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="layui-row">
+        <div class="layui-col-md9">           
+            <ul class="layui-nav" id="header_nav_left">
+                <img class="layui-nav-img" src="../../resource/img/index page/music_logo.png" title="音视网">
+                <li class="layui-nav-item"><a href="../../index.html"><i class="layui-icon layui-icon-home"></i>首页</a></li>
+                <li class="layui-nav-item"><a href="../vedio.html"><i class="layui-icon layui-icon-play"></i>视频教学</a></li>
+                <li class="layui-nav-item"><a href="../audio.html"><i class="layui-icon layui-icon-headset"></i>音频赏析</a></li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">干货资源</a>
+                    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                        <dd><a href="../resource/sample.html">采样包</a></dd>
+                        <dd><a href="../resource/preset.html">合成器预设</a></dd>
+                        <dd><a href="../resource/project.html">工程文件</a></dd>
+                        <dd><a href="../resource/plugin.html">音源插件</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item layui-this"><a href="../article.html"><i class="layui-icon layui-icon-read"></i>必读文章</a></li>
+                <li class="layui-nav-item"><a href="../community.html"><i class="layui-icon layui-icon-group"></i>论坛社区</a></li>
+            </ul>
+        </div>
+        <div class="layui-col-md3">
+            <ul class="layui-nav" id="header_nav_right">
+                <li class="layui-nav-item"><a href="../personal.html"><i class="layui-icon layui-icon-user"></i>个人中心<span class="layui-badge-dot"></span></a></li>
+                <li class="layui-nav-item">
+                    <a href="../personal.html">
+                        <img src="../../resource/img/index page/header_img.jpg" class="layui-nav-img">
+                        <label>我</label>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd>
+                            <a id="_login" href="javascript:;">登录</a>
+                        </dd>
+                        <dd>
+                            <a id="_logon" href="javascript:;">注册</a>
+                        </dd>
+                        <dd>
+                            <a href="#">退出</a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="content" style="background-color: azure;min-height: 400px;">
+        <img width="900px" height="380px" style="position:relative;left:50%;margin-left:-450px;" src="../../resource/img/article page/article2.png"/>
+        <div style="margin:30px;">
+            <h2 style="font-weight: bold;font-family: cursive;">如何用管弦乐编写出不同的情绪风格？</h2>
+            <p>管弦乐在音乐中有着极为重要的地位，它可以演绎出不同的情绪，如激昂的、悲壮的、抒情的等等。今天我们便来讲讲如何运用不同的编写手法来表现这些情绪。</p>
+            <h3>01|温柔情绪</h3>
+            <p>音域：
+
+                该情绪不需要丰富的音域，适中即可。</p>
+            <p>和声：
+
+                尽可能少重复和弦音，使用密集和弦排列方式。</p>
+            <p>配器：
+
+                乐器组多选择SOLO，不一定要有倍大提琴，铜管也可少用；使用较小的乐队编制，适当控制弦乐组的规模；并用中弱力度编写。</p>
+            <h3>02|紧张情绪</h3>
+            <p>和声：
+
+                和声色彩要丰富，可以加入不谐和的和声效果，营造紧张情绪；和弦切换频率不可过快。</p>
+            <p>技巧：
+
+                弦乐持续颤音或所有的乐器突然休止，只留下高声部的弦乐继续演奏，弦乐使用平直的声音，不加入颤音；弱音小号缓慢奏出渐强的效果。</p>
+            <p>节奏：
+
+                低音弦乐及定音鼓保持同节奏音型反复进行。</p>    
+            <h3>03|激昂情绪</h3>
+            <p>音域：
+
+                小号组及长号组使用三音符的完整和弦；充分利用整个管弦乐的音域，让乐器都参与演奏，同时要注意音量平衡。</p>
+            <p>特性：
+
+                打击乐量要足，如低音鼓/定音鼓及钹；叠奏加强声音的厚度与密度；力度需较强。</p>
+            <P>节奏：
+
+                可以将乐曲的拍号从偶数拍变化为奇数拍，再回到偶数拍；使用切分等带有明显强弱感的节奏。</P>
+            <h3>04|绝望情绪</h3>
+            <p>和声：
+
+                单簧管在音区中演奏不和谐的全音符。</p>
+            <p>配器：
+
+                长音铺底的弦乐单声挂在其他声部的上方；双簧管或英国管负责旋律声部。</p>
+            <p>节奏：
+
+                定音鼓编写慢速4分音符；大提琴、低音提琴及较弱的低音鼓与其进行叠奏。</p>
+            <h3>05|悲伤情绪</h3>
+            <p>和声：
+
+                可以选择小调式；使用密集的和弦排列方式，每个乐器组占用的音区应有所控制。</p>
+            <p>配器：
+
+                以弦乐声部为主进行编配；使用长笛、单簧管、双簧管及英国管来演奏旋律或副旋律；除了必要的钹和滚奏，不要使用其他打击乐器；使用较小的力度。</p>
+        </div>
+        
+    </div>
+
+
+
+    <div class="layui-row" style="width:100%;height:200px;clear: both;background-color: rgb(7, 7, 56);">
+        <div class="layui-col-md4" style="height:100%">
+            <div style="width:300px;height:180px;margin:10px auto 10px 20px;">
+                <img src="../../resource/img/index page/music_logo.png" width="100px" height="100px" style="border-radius: 25px;">
+                <span><img src="../../resource/img/index page/foot_logo.png"/></span>
+                <div style="color: rgb(116, 114, 108);margin-top:20px;">COPYRIGHT ©2021</div>
+            </div>
+        </div>
+        <div class="layui-col-md6" style="height:100%">
+            <div style="margin-top: 30px;width:100%;height:150px">
+                <div style="width:200px;float:left;height:50px;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">友情链接</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-wechat" style="font-size: 30px;margin:5px;color:rgb(34, 190, 86)"></i>微信</a></li>
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-qq" style="font-size: 30px;margin:5px;color:rgb(44, 226, 226)"></i>QQ</a></li>
+                        </li>
+                        <li>
+                            <a href="#"><i class="layui-icon layui-icon-login-weibo" style="font-size: 30px;margin:5px;color:rgb(223, 27, 174)"></i>微博</a></li>
+                        </li>
+                    </ul>
+                </div>
+                <div style="width:200px;float:left;text-align: left;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">关于我们</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li><a href="#">我们的历史</a></li>
+                        <li><a href="#">我们的目的</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div style="width:200px;float:left;text-align: left;text-align: left;font-weight: bold;font-family:cursive;">
+                    <h2 style="color:rgb(204, 201, 192)">产品</h2>
+                    <ul style="color: rgb(116, 114, 108);line-height: 30px;margin-top: 10px;font-size: 18px;">
+                        <li><a href="#">音乐</a></li>
+                        <li><a href="#">软件/插件</a></li>
+                        <li><a href="#">舞台表演</a></li>
+                        <li><a href="#">职业服务</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md2" style="height:100%;">
+            <div style="width:200px;height:150px;margin:25px auto;text-align: center;">
+                <img src="../../resource/img/index page/twofrontcode2.jpg" width="100px" height="100px">
+                <div style="color: rgb(116, 114, 108);margin-top:20px;">扫码加入微信群聊</div>
+            </div>                          
+        </div>
+    </div>
+
+
+
+    <form action="" method="get" class="layui-form">
+        <div id="login" style="display: none;">
+            <h2 style="color:rgb(155, 153, 143);margin:40px auto;text-align: center;font-weight: bold;font-style: oblique;">用户登录</h2>
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <i class="layui-icon layui-icon-username"></i>
+                </label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="username|email" name="" placeholder="请输入用户名或邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <i class="layui-icon layui-icon-password"></i>
+                </label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" name="" placeholder="请输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item"  style="margin-top:40px">
+                <div class="layui-input-block">
+                  <button class="layui-btn layui-btn-radius layui-btn-normal" lay-submit lay-filter="*">登录</button>
+                  <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">重置</button>
+                </div>
+              </div>
+              <div>
+                    <a href="#" id="change_to_logon" style="margin-left:30px">无账号？去注册</a>
+                    <a href="#" style="margin-right:30px;float:right">找回密码</a>
+              </div>
+            
+        </div>
+    </form>
+
+    <form action="" method="get" class="layui-form">
+        <div id="logon" style="display: none;">
+            <h2 style="color:rgb(155, 153, 143);margin:40px auto;text-align: center;font-weight: bold;font-style: oblique;">用户注册</h2>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-username"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="username|email" name="" placeholder="设置用户名或邮箱" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" name="" placeholder="设置输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="pass" name="" placeholder="确认输入密码" autocomplete="off" class="layui-input" style="width:240px">
+                </div>
+              </div>
+              <div class="layui-form-item"  style="margin-top:40px">
+                <div class="layui-input-block">
+                  <button class="layui-btn layui-btn-radius layui-btn-warm" lay-submit lay-filter="*">注册</button>
+                  <button type="reset" class="layui-btn layui-btn-radius layui-btn-primary">重置</button>
+                </div>
+              </div>
+              <div>
+                    <a href="#" id="change_to_login" style="margin-left:30px">已有账号？去登录</a>
+                    <a href="#" style="margin-right:30px;float:right">找回密码</a>
+              </div>
+            
+        </div>
+    </form>
+    
+
+
+
+
+    <script type="text/javascript" src="../../layui/layui.all.js"></script>
+    <script>
+        layui.use(['element','carousel','layer','form'],function(){
+            var element=layui.element,
+            $=layui.$,
+            form=layui.form,
+            layer=layui.layer,
+            carousel=layui.carousel;
+            carousel.render({
+            elem: '#test1'
+            ,width: '100%' //设置容器宽度
+            ,height:'400px'
+            ,arrow: 'always' //始终显示箭头
+            //,anim: 'updown' //切换动画方式
+            });
+            $('#btn1,#_login').on('click',function(){
+                layer.open({
+                    type:1,
+                    title:false,
+                    area:['400px','400px'],
+                    content:$('#login')
+                })
+            });
+            $('#change_to_logon').on('click',function(){
+                layer.closeAll();
+                layer.open({
+                    type:1,
+                    title:false,
+                    area:['400px','400px'],
+                    content:$('#logon')
+                })
+            });
+            $('#btn2,#_logon').on('click',function(){
+                layer.open({
+                    type:1,
+                    title:false,
+                    area:['400px','400px'],
+                    content:$('#logon')
+                })
+            });
+            $('#change_to_login').on('click',function(){
+                layer.closeAll();
+                layer.open({
+                    type:1,
+                    title:false,
+                    area:['400px','400px'],
+                    content:$('#login')
+                })
+            });
+
+        })
+    </script>
+    <!-- <script>
+        function login_btn(){
+            window.location.href="./page/login.html"
+        }
+        function logon_btn(){
+            window.location.href="./page/logon.html"
+        }
+    </script> -->
+</body>
+</html>
